@@ -2,7 +2,7 @@
 
 ## Visit the Course Website
 
-
+The course website is now available at [xuhuihuang.github.io/mlchem](xuhuihuang.github.io/mlchem).
 
 ## How to Run A Notebook Example
 
@@ -27,4 +27,5 @@ If you want to contribute homeworks, add your homework folder (including the pro
 
 
 ## How to Build Document
+
 See [Build Doc README](./docs/README.md).
