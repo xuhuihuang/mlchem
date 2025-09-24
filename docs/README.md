@@ -26,4 +26,5 @@ make clean
 ```
 
 ##  Deploy
-The web page is available at 
+
+The website is available at [xuhuihuang.github.io/mlchem](https://xuhuihuang.github.io/mlchem/html/index.html).
