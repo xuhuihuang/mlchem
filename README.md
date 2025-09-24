@@ -1,5 +1,5 @@
 # Machine Learning in Chemistry
-This repository contains course materials for the undergraduate course: "Machine Learing in Chemistry (MLChem)", which was first offered at University of Wisconsin-Madison in Spring 2025 with the course number CHEM361 instructed by Dr. Xuhui Huang. 
+This repository contains course materials for the undergraduate course: "Machine Learing in Chemistry (MLChem)", which was first offered at University of Wisconsin-Madison in Spring 2025 with the course number CHEM361 instructed by [Prof. Xuhui Huang](https://huang.chem.wisc.edu/). 
 
 All lecture slides of MLChem, coding examples and reference notebooks have been made publicly available through the course website: [xuhuihuang.github.io/mlchem](https://xuhuihuang.github.io/mlchem/html/index.html). To maximize reproducibility and accessibility, lecture figures were generated directly from executable Jupyter notebooks, which were compiled into an online gallery using Sphinx. Each notebook functioned as a self-contained tutorial that could be viewed as a rendered webpage or executed interactively in Google Colab.
 
@@ -37,6 +37,7 @@ If you want to contribute homeworks, add your homework folder (including the pro
 ## How to Build Document
 
 See [Build Doc README](./docs/README.md).
+
 
 
 
