@@ -103,14 +103,14 @@ Chapter 8: Transforming Chemistry with Large Language Models - From Chemical to 
 
 
 
-.. note::
+.. .. note::
 
-   Pages are still under development. More examples will be added on.
+..    More examples will be added in future offerings of this course.
 
-   * Diffusion model in chemical data
-   * Flow matching in dynamics
-   * Reinforcement learning in retro-synthesis
-   * Equivalent neural networks
+   .. * Diffusion model in chemical data
+   .. * Flow matching in dynamics
+   .. * Reinforcement learning in retro-synthesis
+   .. * Equivalent neural networks
 
 
 .. Reinforcement Learning in Retrosynthesis
