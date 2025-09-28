@@ -1,0 +1,1215 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html">
+        <link rel="prefetch" href="../../_static/logo.png" as="image">
+
+    <!-- Generated with Sphinx 8.1.3 and Furo 2025.09.25 -->
+        <title>CHEM361 - Homework0 Solutions - MLCHEM v0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=acfd86a5" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=580074bf" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-codeautolink.css?v=b2176991" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=2aa19091" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=e4905d15" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">MLCHEM v0.1 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/logo.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">MLCHEM v0.1 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Home</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../examples.html">Jupyter Notebook Tutorial Gallery</a><input aria-label="Toggle navigation of Jupyter Notebook Tutorial Gallery" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/representation/Reference_Ch2_fingerprints.html">Molecular Fingerprints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/representation/Reference_Ch2_molecular_properties.html">Molecular Descriptors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/cluster/Reference_Ch3_part_1_agglomerative_from_scratch.html">Agglomerative Clustering From Scratch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/cluster/Reference_Ch3_part_1_compare_kmeans_kcenter_on_simulated_data.html">Compare K-Means and K-Center on Simulated Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/cluster/Reference_Ch3_part_1_dbscan_from_scratch.html">DBSCAN From Scratch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/cluster/Reference_Ch3_part_1_kcenter_from_scratch.html">K-Center From Scratch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/cluster/Reference_Ch3_part_1_kmeans_from_scratch.html">KMeans From Scratch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/cluster/Reference_Ch3_part_1_sklearn_clustering_example.html">SKLearn Clustering Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/reduction/Reference_Ch3_part_1_pca_step_by_step.html">PCA from Scratch (Eigen Decomposition)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/linear_models/Reference_Ch4_Part_1_linear_regression.html">Linear Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/linear_models/Reference_Ch4_Part_1_logistic_regression.html">Logistic regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/linear_models/Reference_Ch4_Part_1_polynomial_fitting_overfitting_add_regularization.html">Avoid Overfitting using Regularization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/linear_models/Reference_Ch4_Part_1_polynomial_fitting_overfitting_and_cross_validation.html">Overfitting and Cross-Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/linear_models/Reference_Ch4_Part_1_regularization_effect_explained.html">Explain Effect of Regularization using One Feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/non_parametric/Reference_Ch4_part_2_decision_tree.html">Decision Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/non_parametric/Reference_Ch4_part_2_kNN.html">K-nearest Neighbour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/nn/Reference_Ch5_Part_1_multi_class_softmax_regression.html">Multi-class Classification Using Softmax Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/nn/Reference_Ch5_Part_3_MLP.html">Multilayer Perceptron (MLP) - An example to compare the linear model with the MLP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/nn/Reference_Ch5_Part_4_avoid_overfitting_techniques.html">Techniques to Prevent Overfitting in Neural Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/nn/Reference_ch5_Part_2_xor.html">A simple nonlinear dataset: XOR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/deep_nn/Reference_ch6_Part_1_CNNs_colab.html">Predict log EC50s of Dual-Agonist Peptides using Convolutional Neural Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/deep_nn/Reference_ch6_Part_2_GNN_colab.html">Predict Molecular Property using Graph Neural Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/deep_nn/Reference_ch6_Part_3_rnn_colab.html">Predict Molecular Property using Recurrent Neural Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/generative/Reference_Ch7_VAE_colab.html">Generate SMILES using VAE+RNN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/transformer/Reference_Ch8_PLM_colab.html">Predict log EC50s of Dual-Agonists Peptide using Pretrained Protein Language Model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../homeworks.html">Hands-on Homeworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how2cite.html">How to Cite</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <div class="colab-button">
+    <a href="https://colab.research.google.com/github/xuhuihuang/mlchem/blob/main/homeworks/hw0/Chem361_hw0_solutions.ipynb" target="_blank">
+        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab">
+    </a>
+</div><section id="CHEM361---Homework0-Solutions">
+<h1>CHEM361 - Homework0 Solutions<a class="headerlink" href="#CHEM361---Homework0-Solutions" title="Link to this heading">¶</a></h1>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>rdkit<span class="w"> </span>scikit-learn<span class="w"> </span>wget
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>python<span class="w"> </span>-m<span class="w"> </span>wget<span class="w"> </span>https://raw.githubusercontent.com/deepchem/deepchem/master/datasets/delaney-processed.csv
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+Saved under delaney-processed.csv
+</pre></div></div>
+</div>
+<section id="Q1">
+<h2>Q1<a class="headerlink" href="#Q1" title="Link to this heading">¶</a></h2>
+<section id="Q1.1">
+<h3>Q1.1<a class="headerlink" href="#Q1.1" title="Link to this heading">¶</a></h3>
+<p>Calculate the total number of chemical compounds present in the dataset.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">DELANEY_FILE</span> <span class="o">=</span> <span class="s2">&quot;delaney-processed.csv&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DELANEY_FILE</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of molecules in the dataset: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Number of molecules in the dataset: 1128
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Compound ID</th>
+      <th>ESOL predicted log solubility in mols per litre</th>
+      <th>Minimum Degree</th>
+      <th>Molecular Weight</th>
+      <th>Number of H-Bond Donors</th>
+      <th>Number of Rings</th>
+      <th>Number of Rotatable Bonds</th>
+      <th>Polar Surface Area</th>
+      <th>measured log solubility in mols per litre</th>
+      <th>smiles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Amigdalin</td>
+      <td>-0.974</td>
+      <td>1</td>
+      <td>457.432</td>
+      <td>7</td>
+      <td>3</td>
+      <td>7</td>
+      <td>202.32</td>
+      <td>-0.77</td>
+      <td>OCC3OC(OCC2OC(OC(C#N)c1ccccc1)C(O)C(O)C2O)C(O)...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Fenfuram</td>
+      <td>-2.885</td>
+      <td>1</td>
+      <td>201.225</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>42.24</td>
+      <td>-3.30</td>
+      <td>Cc1occc1C(=O)Nc2ccccc2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>citral</td>
+      <td>-2.579</td>
+      <td>1</td>
+      <td>152.237</td>
+      <td>0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>17.07</td>
+      <td>-2.06</td>
+      <td>CC(C)=CCCC(C)=CC(=O)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Picene</td>
+      <td>-6.618</td>
+      <td>2</td>
+      <td>278.354</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>-7.87</td>
+      <td>c1ccc2c(c1)ccc3c2ccc4c5ccccc5ccc43</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Thiophene</td>
+      <td>-2.232</td>
+      <td>2</td>
+      <td>84.143</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>-1.33</td>
+      <td>c1ccsc1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="Q1.2">
+<h3>Q1.2<a class="headerlink" href="#Q1.2" title="Link to this heading">¶</a></h3>
+<p>Provide the minimum and maximum molecular weights of chemical compounds in the dataset.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">molecular_weight</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:][</span><span class="s2">&quot;Molecular Weight&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Min MW:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">molecular_weight</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Max MW:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">molecular_weight</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Min MW: 16.043
+Max MW: 780.9490000000001
+</pre></div></div>
+</div>
+</section>
+<section id="Q1.3">
+<h3>Q1.3<a class="headerlink" href="#Q1.3" title="Link to this heading">¶</a></h3>
+<p>Calculate the number of chemical compounds with at least two rings in the dataset</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_rings</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:][</span><span class="s2">&quot;Number of Rings&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">num_rings</span> <span class="o">&gt;=</span> <span class="mi">2</span>
+<span class="n">new_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+
+<span class="c1"># print to check molecules with at least two rings are filtered</span>
+<span class="n">new_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Compound ID</th>
+      <th>ESOL predicted log solubility in mols per litre</th>
+      <th>Minimum Degree</th>
+      <th>Molecular Weight</th>
+      <th>Number of H-Bond Donors</th>
+      <th>Number of Rings</th>
+      <th>Number of Rotatable Bonds</th>
+      <th>Polar Surface Area</th>
+      <th>measured log solubility in mols per litre</th>
+      <th>smiles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Amigdalin</td>
+      <td>-0.974</td>
+      <td>1</td>
+      <td>457.432</td>
+      <td>7</td>
+      <td>3</td>
+      <td>7</td>
+      <td>202.32</td>
+      <td>-0.77</td>
+      <td>OCC3OC(OCC2OC(OC(C#N)c1ccccc1)C(O)C(O)C2O)C(O)...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Fenfuram</td>
+      <td>-2.885</td>
+      <td>1</td>
+      <td>201.225</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>42.24</td>
+      <td>-3.30</td>
+      <td>Cc1occc1C(=O)Nc2ccccc2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Picene</td>
+      <td>-6.618</td>
+      <td>2</td>
+      <td>278.354</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>-7.87</td>
+      <td>c1ccc2c(c1)ccc3c2ccc4c5ccccc5ccc43</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>benzothiazole</td>
+      <td>-2.733</td>
+      <td>2</td>
+      <td>135.191</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>12.89</td>
+      <td>-1.50</td>
+      <td>c2ccc1scnc1c2</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2,2,4,6,6'-PCB</td>
+      <td>-6.545</td>
+      <td>1</td>
+      <td>326.437</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0.00</td>
+      <td>-7.32</td>
+      <td>Clc1cc(Cl)c(c(Cl)c1)c2c(Cl)cccc2Cl</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of chemical compounds with at least two rings:&quot;</span><span class="p">,</span> <span class="n">new_df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Number of chemical compounds with at least two rings: 425
+</pre></div></div>
+</div>
+</section>
+<section id="Q1.4">
+<h3>Q1.4<a class="headerlink" href="#Q1.4" title="Link to this heading">¶</a></h3>
+<p>Select any chemical compound with at least two rings and provide its Compound ID along with its SMILES string.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># select any two from Q1.4</span>
+<span class="c1"># I will select the first two</span>
+<span class="n">two_rows_df</span> <span class="o">=</span> <span class="n">new_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">two_rows_df</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Compound ID</th>
+      <th>ESOL predicted log solubility in mols per litre</th>
+      <th>Minimum Degree</th>
+      <th>Molecular Weight</th>
+      <th>Number of H-Bond Donors</th>
+      <th>Number of Rings</th>
+      <th>Number of Rotatable Bonds</th>
+      <th>Polar Surface Area</th>
+      <th>measured log solubility in mols per litre</th>
+      <th>smiles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Amigdalin</td>
+      <td>-0.974</td>
+      <td>1</td>
+      <td>457.432</td>
+      <td>7</td>
+      <td>3</td>
+      <td>7</td>
+      <td>202.32</td>
+      <td>-0.77</td>
+      <td>OCC3OC(OCC2OC(OC(C#N)c1ccccc1)C(O)C(O)C2O)C(O)...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Fenfuram</td>
+      <td>-2.885</td>
+      <td>1</td>
+      <td>201.225</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>42.24</td>
+      <td>-3.30</td>
+      <td>Cc1occc1C(=O)Nc2ccccc2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print Compound ID and SMILES</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">two_rows_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Compound ID:&quot;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;Compound ID&quot;</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SMILES:&quot;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;smiles&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Compound ID: Amigdalin
+SMILES: OCC3OC(OCC2OC(OC(C#N)c1ccccc1)C(O)C(O)C2O)C(O)C(O)C3O
+Compound ID: Fenfuram
+SMILES: Cc1occc1C(=O)Nc2ccccc2
+</pre></div></div>
+</div>
+</section>
+<section id="Q1.5">
+<h3>Q1.5<a class="headerlink" href="#Q1.5" title="Link to this heading">¶</a></h3>
+<p>Visualize your selected chemical compound using RDkit package</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">PandasTools</span>
+
+<span class="c1"># get molecule from smiles</span>
+<span class="n">PandasTools</span><span class="o">.</span><span class="n">AddMoleculeColumnToFrame</span><span class="p">(</span><span class="n">two_rows_df</span><span class="p">,</span> <span class="s2">&quot;smiles&quot;</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">two_rows_df</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+c:\Users\24153\anaconda3\envs\chem361\lib\site-packages\rdkit\Chem\PandasTools.py:379: SettingWithCopyWarning:
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  frame[molCol] = frame[smilesCol].map(Chem.MolFromSmiles)
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Compound ID</th>
+      <th>ESOL predicted log solubility in mols per litre</th>
+      <th>Minimum Degree</th>
+      <th>Molecular Weight</th>
+      <th>Number of H-Bond Donors</th>
+      <th>Number of Rings</th>
+      <th>Number of Rotatable Bonds</th>
+      <th>Polar Surface Area</th>
+      <th>measured log solubility in mols per litre</th>
+      <th>smiles</th>
+      <th>mol</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Amigdalin</td>
+      <td>-0.974</td>
+      <td>1</td>
+      <td>457.432</td>
+      <td>7</td>
+      <td>3</td>
+      <td>7</td>
+      <td>202.32</td>
+      <td>-0.77</td>
+      <td>OCC3OC(OCC2OC(OC(C#N)c1ccccc1)C(O)C(O)C2O)C(O)...</td>
+      <td style="text-align: center;"><div style="width: 200px; height: 200px" data-content="rdkit/molecule"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAIAAAAiOjnJAAAABmJLR0QA/wD/AP+gvaeTAAAcbUlEQVR4nO2deVzU1frHPzOAICiCIqi4k6ncCpdwyY2roN4ULXdS+pklZSqmVxtNkbKsyTJRqcRK3FNyKUOuBq7kkhuuESoqCipGwIDCsM3z++MME4Esw3wPs3jef81rluc8MJ853/M951lkRASBQGrkxnZAYJkIYQm4IIQl4IIQloALQlgCLghhCbgghCXgghCWgAtCWAIuCGEJuCCEJeCCEJaAC0JYAi4IYQm4IIQl4IIQloALQlgCLghhCbgghCXgghCWgAtCWAIuCGEJuCCEJeCCEJaAC0JYAi4IYQm4IIQl4IIQloALQlgCLghhCbgghCXgghCWgAtCWAIuCGEJuCCEJeCCEJaAC0JYAi4IYQm4IIRlKWg0iIjAjBkID0dxMU6dwrlzAJCXh40b694dISxL4bPP4OCA8HA0a4YPP8S1a0hOBgC1GocP17071nU/pIAL8fGIjgaAMWMQGYmnn0ZMDNLSkJdnFHcknrFyc3OXL1/u5ub27LPPJiQkSGtcUBUyGTQaACCCTAYA3bvD3x9DhxrFHcmE9ccff8yfP79NmzZz58598ODB5cuX/fz89u/fL5V9QTX4++Pzz5GTg9Wr4ecHAG5u8PBA27bG8YcMo6CgICoqytfXV2ewe/fuCxcuHDJkCACZTKZQKEpKSgwcRVAjfvyRFi2inTuJiC5fpsREIqL8fIqOrntfai+s69evKxSKpk2bMj05OjoGBQXFxcUtXrx4//79Go1GqVRaWVkBGDhwYHp6uoROCx6DRkMtW5K3NxUUGNsVoloIq6SkJDY2duzYsUw0ALp167ZmzZo9e/aMHTvWxsYGwJAhQ9ibDx486ObmBqBVq1YnTpyQ2nlBGe7cIYBcXY3thxY9hHXv3j2lUtm29Jpta2s7duzYnTt3fv755x06dGBP1qtXb/z48UeOHNF96s6dO71792bvDwsL4/AnCIiI6MgRAqh3b2P7oaVGwgoPD9fNRgCefvrp5cuXHzx4MCgoyN7enj3ZokULhUJx586dih8vKipSKBTsbRMnTnz48KHUf4WAaN06AmjSJGP7oaV6YX388cdME3K53NfXd8eOHevXr+/atWvZJ6OiooqKiqq2s2XLFgcHBwCdOnW6cuWKRP4LSlm0iABavNjYfmipXlienp4AevTocfz48enTpzs6OjJJNW3aVKFQ3Lhxo+aDJSYm/utf/wLQsGHDqKgoA9wWVCAggADasMHYfmipqbDOnz9/6NAh3YZCREREXl5eLcbLyckZN24c24kIDg4uLCyshRHBY+jRgwCKjze2H1qqEZZGo2GrKJVKpdFoQkNDL126ZPioERER9erVA9C3b9+LFy8abtA80Gj42V7p67vPx0d99y6/IfSiGmGlpaWxq57kA8fHx7do0QKAk5NTteszM0OjobFjtY9HjyYiOnaMJkyg4GAKDKTsbMkHVKlUAOzt7TU8tasX1RzpJCcnA/Dw8Kh+C19P+vbt+9tvv8nlcpVKdfbsWcntGxMiFBdrH7MHH32E9euxciUmT0Z4uOQDsq+pffv2MnZKaAJUI6wbN24AaN++vbSjjhs3rk+fPunp6QCsra27d+8urX3jc+ECZs7EzJn44w/tM7a2APDcc0hKknw0Tl+TIVQTNsM8lnzGOnXqVEpKSkZGhkajad++vbW1xUXveHlh9WoAeOklANBoUFICKytcv87jVJjfhaXWVPON6uZYCYcsLCxMTU21srLKz8+Hif07ePH223jtNXh54dgxfPUVQkKQk4PlyyHRL8r8Ziwewrp161ZJSUm7du1SUlJgkcKSy7FunfZxZCQAjBgBPz+kp2P2bKSk4NNPUVSEK1ewdStcXQ0fMCkpCSYmrBqtsaT97nU/LxP8nUmGk5P2gbOz9kH9+mjbFnI52rVDXByaN8eBA+jWDceP13oQjUYTFxfn7+//66+/Ojs779mzp6SkxGDXJaKKO8bc3FwAdnZ20gZUhYeHAwgKCho+fDiAXbt2SWjcbEhPp4EDCSBra1Iq9f10Wlra+++/7+7uzr5EOzs7uVwOwM/P78GDBzz81ZeqhHX+/HkAnp6e0g45Z84cAEqlsnPnzgAuXLggrX2zobCQZs8mmYyAmDlzcnNza/Kh+Pj4cgEBSqUyIyPj8OHDzZo1A9CyZcvjx49L5uT+/fT22zRzJl2+TES0bJn2ed2DSqhKWLt27QIwfPhwaVwsZeTIkQC2b99ev359ADk5OdLaNzOioq74+gLo3Lnz77//Xtm7srOzIyIi2EkrACsrq+HDh8fGxpbdEU1NTe3Tpw8Aa2trpf6z4GO4fp0CAqi4mFQqGjyY1GoaOVL7ku5BJVQlrM8++wzArFmzJHCxDM8++yyAmJgYAG5ubtIaN0eSkpLY/6RBgwbff/99uVfPnDlTMTzp9u3bjzXFIpTYNmlAQEANZ8FKiYwkXazAggV04QJ5elJICIWEUMeOVX+0KmFNmzYNwMqVKw1yrgINGjQAsHfvXgC9TSYwzbjk5eW99tprTDpBQUEFBQX5+flRUVEvvPACe7Lm4UlEtHv37kaNGgHo2LHjZXYJ04usLFq5kqZMoW3baP167ZPBwXT1Kg0bRpmZlJlJL75YtY2qhMUSIn7++Wciquwnoi/37t0D0KRJk3Xr1gGYZDKBaaZAeHg4O5tv06YNUwYAFxeXd999Nzk5WS9TSUlJzzzzDJsFt23bVtOPnT1LQUHk4EAAAXT8OA0dSpcu0eHD9PLLpNFIcylkh8SXLl26cOGCvb19UFCQ4VEux44dA+Dt7b1o0SIAi40XmFZQQCoVEdFPP1FWFhHR0aOUn28sd7ScOXPG1dWVxX8bEp5ERLm5uRMmTCg7C1b2zpK8PIqM1AbeACSTka8v7dxJRUWUlkZffknffUePHhER/e9/2s/oHlRCVcKys7MDMGPGjMjISHYb0q9fv7uGBWZs3LgRwIQJEwICAgBsMEZgWloaKZXUsiW9+y4R0eDB9M47RERvvUWmcKs+ceJEACEhIZJY00UoeXt737p1q9yrV69eVSgUnq1baxo2JIAaNaKgIKrF1bMCVQkrMDCQLQNHjhx54MCBNm3aAGjatGlsbGytx3v//fcBvPfeez179gQQX4eBaSUltHcvDR9OVlbaX+bAgURE48fT/Pl08qSpCGvAgAEADPknl+P06dNsCmzatOkvv/xCRIWFhTt27Bg0aJAuGiLh1VcpMpJqOztWpJp4rOjo6MaNG7Or/i+//OLn58fudUNDQ2u3a7p48WIXF5dvv/3WxcUFgIHzXw1JT09fsULVrp1WT7a2NHEi7dtHYWEUHU3jx1NuLo0YQVOnmoSwWrVqBUDfRVXVPHjwgCUVW1lZ+fn5sUUOAAcHh6lTp549e1bCsRjVhyanpKT06NGDbe9GRESEhoayTV5/f/8stjbRHxaYVr9+fd6BaexevX79+gMG7AHIw4OUSoqN/XuF2rcvjR9PRBQVRU2bGl9YarVaLpdbW1tLHrTNUohlMhnbR2U7q3/99Ze0o+ioUfqXWq0ODg5mGg8MDNyxY4ezszOAp556St99c5aS369fvyZNmjg5OXHadlepVOHh4ey2iP1MAwKm//gjffsteXv/vUIdPJiiomjpUu2n/vtf7XLeiCQmJgLw8PDgZJ9lgK5Zs4aTfR16JKxu2LCBbdN17do1Pj7e29ubTWPffvttTT5+8+bNBQsWuJYe5rM7A3t7e8nX7x9++CHbKgPQvHnzRYsWHTp06J133vH1TWaSatKE/vtfio/XLuGnTZN2fIOIjo5mR36c7LMkK34TlQ79UuwTEhJYpIOjo+P27dunTp2qm8YquyvWpeTrovk6d+4cFhb2559/1uTjteCLL75g9+qRkZG7d+/29fVlS9RnnpnaqxetX087d9KwYSSXa6euvn2lGlkCVq1aBeCtt97iYfzBgwcAnJyceBgvh961G1Qq1ejRo1FaSSYiIoLNPd7e3uUOENLT05VKZbt27Zh6WEp+uZsd3SzYrVs3qZar2dnZBw4cUCqVbBXMZsfAwMDY2NgVKzLbtNHqyc6OAgNJwuNaSXjnnXcALKvuiLd2nDhxgv3keBgvR22qzWg0mrCwMDYD+fj4xMbGtm/ffuLEibo36JbM7Hv18PBQKpWVhXOcO3eOhWQ1btw4Jiamln8HEZXOjt26ddNl1Xbs2FGpVLJqAHZ2dv36bdYt4Y2+Tn8s/v7+AHayUkRSs2XLFgBjdRlEPKl9GaOycRr79u3Ly8tTqVQRERHPPfdcueOt4uLiqk2pVKpRo0bpZsFq31+RP//8c9myZbqARJlMNmLEiJiYmNWrV7OEWwDW1tYTJryxfz+Zcrku5m1CQgIP40uWLAEwf/58HsbLYVDhtdTUVHZKamNj07ZtW1aagS2ZQ0JCHlsgpDLK1tP697//ff/+/Rp+sNzhv7u7e2hoaFJSklKp1PnTokWLxYsX6+WPUSibHszD/uTJkwGsXbuWh/FyGFrRr6ioaN68eSilT58+UVFRtd6DOXToUA2j1XJyciIiIrp06VJudtQd/n/zzTeG+1PH8EsPZvTr1w9AXFwcJ/tlMVRYjLVr1wYFBR09etRwU7pZsLJotcTERIVC4VwaS+7m5vbY2iSPHj36448/DPenLjl69CiAXr16cbLPQplv3rzJyX5ZpBGWtJStp/XKK6+welq6Yqe64y0DD/9NkPXr17M/mYfx/Px8uVxuY2NTiyVsLTBFYTF27drFYpKeeuqpKVOm6IqdNmrUaMaMGRZZYSskJATSxTWU48qVK+yfycN4RUw3Bfnll1/29PQcPXp0UlLSjRs3NBqNp6dnUFDQ66+/rttYtzC45sNxSmqvDNMVFoCOHTtu3brVy8vLyclp3759LNLGUrl69Wp8fDwA3dwsLXWchm/qvXTu378PoGvXrpaqqpKSEpZ02qlTp9u3bzs4OLz55pu//fab5APVcXqwqQvLgrOlU1NTQ0NDW7du7efnFx0dbW9vHxAQ4OHhkZaW5uPjw7ZLJKSu/5N1s5SrNWyTbKkutMUC0Gho/37NqFHPNWvGvgJPT89Vq1ZlZ2fTPyOUJk2a9IhFmktBHacHm7qw2FGPHnkmpkxWFkVEkKcnOwaPHTRo/Pjxhw8frvjGjRs3si14Ly+vO9evGz5yWlqara0t6jA92NSFxfbWT506ZWxH9OfIEVq+nH75hYjoxAl69VWys9NGVrRpQ0uXUpXHVomJiZ6ens926PDIzY1++KHWXpw5cyYwMNDGxsbe3t7GxiYwMFDCWbAKTF1YLOI+IyPD2I7oyZYttGAB3bxJn3xCq1bRiBEEkFxOvr4UFUU1q7mqUqluTZmijXZVKGr4KUZmZuaKFSs6duzIrqo2Nja9evVi8SZdunS5LsUsWDWmLawHD4qsrZOlrkpSF4wYQeyAUqOh//yHDh6k+fNJn5r4WjQaCgsjGxsCqH9/qknuyalTmXPm6E7lW7Zs+cEHH6SlpRHR77//zlZajo6OO3bs0NsZfTBtYZ08SQB162ZsP/Rn2LC/i29Xl41ePUePUvPm2h5MBw48/j35+RQVRX36sKvtJE/Px6bk5+TkjBkzBvzr7Ju2sLZsIYDqJDBNYj75RLswioujefMkMHj3LvXvTwCxcPhLl2jvXm2wYmIizZpFTk6kC+mfO1dd+cWOxWmyDOT+/fvfu3dPAvcqYNrCWrKEAFIojO2H/hQW0mef0fTptHSpZHn7RUX0/vt0/z598QUtXkx799JLL9HFi+TsrJVU7960cWMNhzt69Gjz5s0BuLu7//rrr9J4WAbTFtbkyQRQnQSmSc/gwRQYyKUaRGk7SLpwgebOpYUL6c03Sf+g0/T09EGDBqE0QknaHE/TFhab/OskME1i/vqLAGrQgItx3aItLY3eeMMQS2XraY0cOTJbuq4Zpn2kk5wMAOZYVvnGDYCb5zY2yMwEgLg4GHaEyuaqH3/80cnJ6aeffurRo8fly5elcVIqhXJhzx764gu99m9MhW3bCKBRo7gYv3aN3niDpk+n994jiW7rrl69yqoK1q9ff926dYYbNFVh3b1LAQEUHEzjx5M5tgf7+GMCaO5cY/uhBw8fPpw0aRKbbgYPHmygNVMVVnAwsRjRzExtAy3z4vXXCaCvvjK2H3oTEREhl8tdXFwyMzMNsWOqa6zr19G5MwA4OyMvz9je6A/XNRZPJkyYoNFo8vLynHQ9EGqFqQqrRQvcvg0A+fkorWluRnzeqNGGvn0LzFBYUnWoM9XQ5HnzMHs2+vfHyZOYOxdxcQgPR2Tk3x1EDOHGDXzyCWxtYW+PJUtgZyeBzTIUFhbO//lnAAGlxSPMCMm6J0l1bZaeoiJKTia1moqL6amniBVdkCT3fNQo7WHIjh20YoUEBv8Ja5nUrl07yS3XAZ9++imA2bNnG2jHVC+FAKyt0b49bG1hZYWDB9GzJ5KT0bs3DI/Zzc8HS1gYOBCnTxvuaTlMsHtgzZEqgtmEhVWWVq1w5AiCg6FWIygIr76q94percbGjejWDbGx0Gi0T6anw8VFcmfNOk5fql+Fqa6xKmJri5Ur0bUr3n4bmzZdLS62/uijGn15V65gzRps2gSVCgA2bcKoUVAoMGAAIiPxwQfYvBnFxZg8WSpPzVpY3g0alHTp0tHw6VaSC3Odcv68atAgF3t7Z2dn1jXjsRQUFOT88IP2tFFXum/LFlKriYgSE7VhJ7dvk709ATR1qlQHxqzG1Q8GxBMbjaIisrYmuVz7XzIAMxQWkUqlKhutVi6WLTU1ValUtmzZcpGPDwHUsCEFBdH585Wa27BBq62uXcmwqoKsHr9cLnd0dHxsloSpc/06AdS6teGWzFJY9M9otQEDBty7d6+kpCQ6OnrYsGGsWjiAIT4+9PXXVJO8lIQE8vAggBwdSf/GnIWFhT/88MPAgQN1ez89e/aUtntoHbF/PwHk42O4JXMVFuPgwYNubm4AXFxcWrZsyb5UVnH02LFj+tnKyiJ/f5a5cGn58hqWZLl7927FYqenT5+uzR9jCnz9NQH0+uuGWzJvYRFRenp6z549WZXvqoudVo9GQ2Fhmc8/b2dt7ePjU0VVwYqloFmx0zooc82XefMIICnSg81eWFRavM/Pz0+Sq8+hAweYTFu1anXixIlyr2ZlZUVEROjqmtarV4+VgubdYqOOGDWKAKrQjLMWWIKwFi5cCCA0NFQqg4/tgVux2KlCoTD9uqb6wfqf//ab4ZYsQVg8OtQVFhbqaii88MILZUtBDxs2LDo62izX5lWTkkKbNlFMDBUWUnY26ao81KoCqCUIi/WQ4pFqsnv37gYNGrBsFldX18cWO7UQrlyhMWPo+HFatYree48uXqSFC7UvVddM9bFYgrC4dqh75ZVXAAQGBlbRodQSUCj+3uobMoQuXqQ33qBz5+jcudol3JrPkU4l5OTkZGRk2NvbNyutCiQtWVlZAMaMGcP6lFosDx+itJ0HbGyg0eD+fSQkAEBhYS3smckhdOVIFZhWrX0exk2Ivn2xZw8A3L8Pa2vI5fDywpQpmDIFpX0Y9MLsZyyuJ74ajSYlJUUmk+laTVks48Zh+XLMmAEAq1ahpAQdOmhf6tq1FvbMXlhcg59SU1MLCgqaN2/uUKtfrTkhl6NMhxEAaNtW+yA0tDb2DHXI2HCdscw6ZM+4mL2wuK6BzDqyyriYvbC41sUXwqo15i2s4uLiO3fuyOXytroFgaSIS2GtMW9hpaSkFBUVubu7s5LAkvOk7DVwwLyFxbs/TB33n7EkzFtYXC9V2dnZmZmZDg4OLIpGoBdmLKy//vpr+/btADg1A+O9p2/ZmKWwzp49++abb7Zu3frw4cOurq4RERGRkZGSjyKug4ZgTsJ6+PAh6wP9/PPPr127Vq1WDx061MvLS61WT5kyZebMmYW1Oi6tDHFLaBBShl7w49IlevvtD/v1Yz67urouWLBA19t4w4YNrOdC9+7dJWx4PHXqVABffvmlVAafKExbWAUFFBVFvr4kkxGQ7u3dv3//rVu3VgyNOnv2LDsndnFx2bdvn+EjP3r0iEWNVpETK6gC4wnr8GFtxt/Nm3TpEhFRUhKFhdHmzVRYSDdv0vz55OqqTWJ2dKTp0+ny5SrsZWRkDB06FIBMJlMoFLUOHU5KSlIoFE2aNAHg7Ozs5eV169at2pl6kjGesGbMoJQUIqK9e2nNGkpKotGj6do12rOH/u//aNkyraQ6d6awMMrNrYlJjUajVCpZwuqLL76oVzJWYWHh9u3bfXx8dPeAXbp0YUmLrq6uceZYEtyoGFVYmzfT/v300Ue0Zg0tXUrx8dqXXnqJUlNp8mSqkH1VEw6Uyd86efJkte9PS0srm3TasGHDoKCghIQEIsrIyBgyZAgAKyur0NBQC0yg4IZRhbVuHe3ZQ6GhtGYNhYaSLoF4/Pga5cVXzu3bt3v16gXA1tY2LCzsse+pmHTaqVMnpVJZrqhr2Vlw2LBhBpZ8fXIwmUthfDzNmkVElJZG/v6Gm6+iB25WVlZYWJjuBLAmSad79+5t3LjxM02bFnTrRubYlbPOMZ6wNmwg1t7y/Hltq7Tt22n6dJozh9LSpBpk8+bNLPjTy8vr2rVrLOmU7U0AcHd3Dw0NTU9Pr4mpGzdupI8ZQwDVr0/ffSeVh5aKaW83SMHFixc7dOgAQBdebGVl5e/vHxMTo/eaSa2m4GDtXUVgINVJD1wzxfKFRUQqlcrLy6t58+aNGjVSKBSGbqJu2kQODgRQly7EvweumfJECIuIJk+eDOArqVpFXLhAHToQQD17EhE9ekQ3bxKrfJSVpW3+o1YbeAti1pjTWaEhsIM/XfNtQ3nuOZw+jYAAfPMNdu/GtGnYtQujR+PuXXz8sbYtxfHjWLdOmuHMELNP/6oh0seCNmqErVsBYN48xMRALkffvggPl8y+mfNECEutVt+7d8/GxqYVj1YRcjlYccr27ZGaimbN8OGHcHJCWhoGDJB+ODPhiRAWKxHTtm1bKysr6a3LZCgogK0tzp+HpycyMxESgqefxqFDuHhR+uHMhCdCWHwjq0JCMHkyXF2RnY3Vq7FsmXYCs7Iyx/ZSUiEjImP7wJ1b332XtHmzul+/kUuW8BqDCCKCuQxPxF1h2wsXhhw+PLJRI45jCFX9kydCWObbltJ8eTKElZwMCGHVKU/AGkujgYMD1Grk5oJPopigIk/AjJWWBrUabm5CVXXJEyAsscAyBk+AsIqK4OmJ0l4SgrrB0oWVk4NLlzBuHGbNAoDvv9c+f/Ikbt0ynluWj0ULiwiBgfDxwbRpWLgQt25h2zbtSydP4uZNozpn4Vj0kc7du3Bz0xb9nToVMTHQaLTaSkiAl5dxvbNsLFpYRChtigm5HBoNZDKwAAcnJyP69SRg0ZdCd3fcuYM7d1BYiA0bMGQIZDL06YM+fWDxdduNjUXPWDIZvvsOq1fj0SPMmoUOHTB8uPalLl3g7m5U5yycJ2DnXWAMLPpSKDAeQlgCLghhCbgghCXgghCWgAtCWAIuCGEJuCCEJeCCEJaAC0JYAi4IYQm4IIQl4IIQloALQlgCLghhCbgghCXgghCWgAtCWAIuCGEJuCCEJeCCEJaAC0JYAi4IYQm4IIQl4IIQloALQlgCLghhCbgghCXgghCWgAtCWAIuCGEJuCCEJeCCEJaAC0JYAi4IYQm4IIQl4IIQloALQlgCLvw/w2vgLb9Fr/cAAAIlelRYdHJka2l0UEtMIHJka2l0IDIwMjQuMDkuNAAAeJx7v2/tPQYgEABiJgYIUABiJSBuYORgSADSjIxsYJqJCUIzA8VBarBziVPFDDRTA8RlYYfQzGwOIJqZhc0hA0QDFRDDgJuN7FDq8bkZGBkYmYCuAzqMgYWVgZWNgY2dgZ2DgYOTgZOLgYubgZuHgYeXg5mbj4GPP4OJXyBBQDCDSVAoQUg4g4lThEFElEFEjEFMnEFMgkFCkoFFikFKmkFKhkFGlkFGjkFOnkGYL0GCnUGOicGJGWgjG5OcjBQLMxsHp4iYBDsbv4CgkDCfeBcj0C0MsNh5ynXFQb2F5wCIE1B+y+FKi+l+ELu1eovDUvZQO7C4cIeDM9vOfSA2p76LwxxnPnsQ23bvNfs50Ql7QOzJ3HvtZ7MdAOs9v3qb7YQSFrCZ+S09+w+1TgaLLxKSP+CecQfMtuDKPnCR0w/MTjaMO/C9UQ9s5o8E1gONygvAbFMno/1sbC/B7BqRqQeilpwBs4VW9B2QL3V1ALHvLt5yIF24AcwW4nl4oGdrNJhdW/H8gInqT7D6TTUHD1w92Axml7/WPiAW7gt228fYpgMRJwrB7MPP9+9PYmkBs3Nn3tx/e+pmMPtK3pO9TdOTwWy7FZ32M1X6wex77IEONzczge3yFGB16Ei1BbNV30xxkFFVB7P7I2Y7sKs0g9nvn+9yuPnsBtgNqgHPHdY/EQCLiwEAJ3GTRZXF1DcAAALselRYdE1PTCByZGtpdCAyMDI0LjA5LjQAAHicfVVbbtswEPz3KXgBC/sm+ZnEQVEUsYE27R363/ujs5RDOShRWVxI1Gg5mlmuTyWP75dvv/+UecjldCqF/nP23ssvJaLTW8mL8vz65eu1vLw/PX/MvNx+Xt9/FJWihnfw+4x9er+9fcxwuZXYQkJxc5aNu3tEoY3Gcbwq5QXAJpXCypm2Sp28LYAKoG9hRDUfCzXSusAZVrZNXNRrJtRgrauVHQl1o3CtjMfuXrkvcIGEvEWt4ZQJiTW6LYAVCXmzGp2jnHlzIiFZABuAmG0dqqQ4FD14lbFjaSSiXmuXvGIXX5Jk2JOprLnzgFbhrqvVOb05K75IDKbjixpZW2rJ6Q6gVrlGEozGMdT6B6n7+tSMzCADeFLTFdLKNRfFN6sokE3I+sogTofOtoW36gyk91aXRQS9B9K8Ea7hanOpK0U5TTpnHcEdRaHAI9i5QqZL57qRCoRCTlPpvly970hRBQHw7BZmqxqW4VJsBEAVIEm6+kol4V3PaCFW0wMUvBmtoJJ+4kuq9hjQWmtbZx0uoUZ7l6B8icVdfQW1vfYCjSGrFJIxjFpmHT7RxswOhiCAvc6yqj3ZNxNVt/wqOFZVeFV6Usf2lAgmLygsE5ElsCElntfOMEK27ij75dppU1aTNtCAtMyxFBRntpDm5hAJwvbGSzuVR09CyTdON9EW8M4KmBahQAS2KJZGW+zLJvd6vXxqo3tjfb5dL0djzZ8c7RM3RY8myRh29ELG8KPjMUYcjY0x6tG+GKMdTYox+tGKOMdjw+ER+KGv8AiTXIoywuSHNqEZeFJku2MmS2x7y8CTKLa0ZeDJFSVjGXjSxXa1DDwZoxosgzxuv8FZJmcZYuI8BJX7zOScTSqDTM5i95nJWVJaBJmcJYbYMilL6osgk7K0+8ykLKkygj7W4j4zKWtSRtBJGdVl49smHdWdzlxK7f7SY6E9llXef/zX4/r0F74Uh3alpaA1AAABcXpUWHRTTUlMRVMgcmRraXQgMjAyNC4wOS40AAB4nE2RS4rkMBBErzIwmyqQRf4/eOn91CH6Gn34jlRvRmAsnkOhiPS/v8/z+jz8eV7P55HzeoP8PvLfnj/vL/6axX++Xxft6FDRxbuEfN2XbCojAxBnKhDdlpyxoC2O5IMixReOF1lpnnNW7rwu3incCsSbOrMHsYvLugnmzW1guAdXw4xhHy2jciIZEJlx3Ik1euwVaseGtrsn97oN+URjVBqsyHf7DiNEpi1UNMcCrZKOKKnJa1BIqE4AbnjNMRQuRuNoc1t3bpFyXbKh7Ji7cHkNCOawAeXmsQwNi33ySeAbFGSCcd7YZLMAtLeiFSIwM+wxPPfgU5QSNusyjEBFzsisW2IQi0+Ya2JhrQv1WMjOrKNi5q/T1AYhSWrnoMwsPyi80tHLuzIPMS+MGNMslyEzMp8aJOcv5iaVHIWpTHUQUbWAS9to7yvQMSxBSFp9vb9/AIuAgVfKTaAxAAAAAElFTkSuQmCC" alt="Mol"/></div></td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Fenfuram</td>
+      <td>-2.885</td>
+      <td>1</td>
+      <td>201.225</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>42.24</td>
+      <td>-3.30</td>
+      <td>Cc1occc1C(=O)Nc2ccccc2</td>
+      <td style="text-align: center;"><div style="width: 200px; height: 200px" data-content="rdkit/molecule"><img src="data:image/png;base64,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" alt="Mol"/></div></td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Just in case the above cell didn&#39;t show image,</span>
+<span class="c1"># try plot the two molecules one-by-one.</span>
+<span class="c1"># We will learn how to plot multiple mol images at once later in the course</span>
+
+<span class="c1"># plot the first molecule</span>
+<span class="n">two_rows_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/homeworks_hw0_Chem361_hw0_solutions_17_0.png" src="../../_images/homeworks_hw0_Chem361_hw0_solutions_17_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the second molecule</span>
+<span class="n">two_rows_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/homeworks_hw0_Chem361_hw0_solutions_18_0.png" src="../../_images/homeworks_hw0_Chem361_hw0_solutions_18_0.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="Q2">
+<h2>Q2<a class="headerlink" href="#Q2" title="Link to this heading">¶</a></h2>
+<section id="Q2.1">
+<h3>Q2.1<a class="headerlink" href="#Q2.1" title="Link to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p>70:30 train-test split</p></li>
+<li><p>fit a linear regression model using “Molecular Weight”</p></li>
+<li><p>Provide the slope and intercept of the fitted linear regression model</p></li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get data we need</span>
+<span class="n">log_solubility</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:][</span><span class="s2">&quot;ESOL predicted log solubility in mols per litre&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="c1"># prepare X and y</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">molecular_weight</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">log_solubility</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="c1"># do 70:30 train:test split</span>
+<span class="n">test_size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">*</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="n">test_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+
+<span class="c1"># fit the model using training data</span>
+<span class="n">regressor</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># print slope and intercept</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Slope:&quot;</span><span class="p">,</span> <span class="n">regressor</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Intercept:&quot;</span><span class="p">,</span> <span class="n">regressor</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Slope: [-0.01089703]
+Intercept: -0.7664045143017582
+</pre></div></div>
+</div>
+</section>
+<section id="Q2.2">
+<h3>Q2.2<a class="headerlink" href="#Q2.2" title="Link to this heading">¶</a></h3>
+<p>Report the mean squared error (MSE) for both the training and test sets.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
+
+<span class="n">y_pred_train</span> <span class="o">=</span> <span class="n">regressor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MSE of training: </span><span class="si">{</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span><span class="w"> </span><span class="n">y_pred_train</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">y_pred_test</span> <span class="o">=</span> <span class="n">regressor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MSE of test: </span><span class="si">{</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="w"> </span><span class="n">y_pred_test</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+MSE of training: 1.52
+MSE of test: 1.52
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Coefficient of determination on training data: </span><span class="si">{</span><span class="n">r2_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span><span class="w"> </span><span class="n">y_pred_train</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Coefficient of determination on test data: </span><span class="si">{</span><span class="n">r2_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="w"> </span><span class="n">y_pred_test</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Coefficient of determination on training data: 0.45
+Coefficient of determination on test data: 0.49
+</pre></div></div>
+</div>
+</section>
+<section id="Q-2.3">
+<h3>Q 2.3<a class="headerlink" href="#Q-2.3" title="Link to this heading">¶</a></h3>
+<p>Visualize the distribution of chemical compounds in the molecular weight vs. log solubility space for both the training and test sets, and overlay the fitted linear regression line on the plots.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Train data points&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">X_train</span><span class="p">,</span>
+    <span class="n">regressor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">),</span>
+    <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Model predictions&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Molecular Weight (Da.)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;log solubility (mol/L)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Train set&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Test data points&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">X_test</span><span class="p">,</span>
+    <span class="n">regressor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">),</span>
+    <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Model predictions&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Molecular Weight (Da.)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;log solubility (mol/L)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Test set&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Text(0.5, 1.0, &#39;Test set&#39;)
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/homeworks_hw0_Chem361_hw0_solutions_28_1.png" src="../../_images/homeworks_hw0_Chem361_hw0_solutions_28_1.png" />
+</div>
+</div>
+</section>
+<section id="Q2.4">
+<h3>Q2.4<a class="headerlink" href="#Q2.4" title="Link to this heading">¶</a></h3>
+<p>Fit linear regression model using the property “Polar Surface Area”</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># copy the code and change the column to pick</span>
+<span class="n">polar_surface_area</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:][</span><span class="s2">&quot;Polar Surface Area&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="c1"># prepare X and y</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">polar_surface_area</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">log_solubility</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># split data</span>
+<span class="n">test_size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">*</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="n">test_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># fit the model</span>
+<span class="n">regressor</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># print slope and intercept</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Slope:&quot;</span><span class="p">,</span> <span class="n">regressor</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Intercept:&quot;</span><span class="p">,</span> <span class="n">regressor</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Slope: [0.00910397]
+Intercept: -3.305001759223527
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot mse of training and test</span>
+
+<span class="n">y_pred_train</span> <span class="o">=</span> <span class="n">regressor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MSE of training: </span><span class="si">{</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span><span class="w"> </span><span class="n">y_pred_train</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">y_pred_test</span> <span class="o">=</span> <span class="n">regressor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MSE of test: </span><span class="si">{</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="w"> </span><span class="n">y_pred_test</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+MSE of training: 2.67
+MSE of test: 2.87
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Coefficient of determination on training data: </span><span class="si">{</span><span class="n">r2_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span><span class="w"> </span><span class="n">y_pred_train</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Coefficient of determination on test data: </span><span class="si">{</span><span class="n">r2_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="w"> </span><span class="n">y_pred_test</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Coefficient of determination on training data: 0.04
+Coefficient of determination on test data: 0.03
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Train data points&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">X_train</span><span class="p">,</span>
+    <span class="n">regressor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">),</span>
+    <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Model predictions&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Polar Surface Area&quot;</span><span class="p">)</span> <span class="c1"># change x labels</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;log solubility (mol/L)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Train set&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Test data points&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">X_test</span><span class="p">,</span>
+    <span class="n">regressor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">),</span>
+    <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Model predictions&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Polar Surface Area&quot;</span><span class="p">)</span> <span class="c1"># change x labels</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;log solubility (mol/L)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Test set&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Text(0.5, 1.0, &#39;Test set&#39;)
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/homeworks_hw0_Chem361_hw0_solutions_35_1.png" src="../../_images/homeworks_hw0_Chem361_hw0_solutions_35_1.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, Xuhui Huang
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">CHEM361 - Homework0 Solutions</a><ul>
+<li><a class="reference internal" href="#Q1">Q1</a><ul>
+<li><a class="reference internal" href="#Q1.1">Q1.1</a></li>
+<li><a class="reference internal" href="#Q1.2">Q1.2</a></li>
+<li><a class="reference internal" href="#Q1.3">Q1.3</a></li>
+<li><a class="reference internal" href="#Q1.4">Q1.4</a></li>
+<li><a class="reference internal" href="#Q1.5">Q1.5</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Q2">Q2</a><ul>
+<li><a class="reference internal" href="#Q2.1">Q2.1</a></li>
+<li><a class="reference internal" href="#Q2.2">Q2.2</a></li>
+<li><a class="reference internal" href="#Q-2.3">Q 2.3</a></li>
+<li><a class="reference internal" href="#Q2.4">Q2.4</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=34cd777e"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>

@@ -1,0 +1,1645 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html">
+        <link rel="prefetch" href="../../_static/logo.png" as="image">
+
+    <!-- Generated with Sphinx 8.1.3 and Furo 2025.09.25 -->
+        <title>CHEM361 - Reference Jupyter Notebook for Homework 1 - MLCHEM v0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=acfd86a5" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=580074bf" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-codeautolink.css?v=b2176991" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=2aa19091" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=e4905d15" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">MLCHEM v0.1 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/logo.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">MLCHEM v0.1 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Home</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../examples.html">Jupyter Notebook Tutorial Gallery</a><input aria-label="Toggle navigation of Jupyter Notebook Tutorial Gallery" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/representation/Reference_Ch2_fingerprints.html">Molecular Fingerprints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/representation/Reference_Ch2_molecular_properties.html">Molecular Descriptors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/cluster/Reference_Ch3_part_1_agglomerative_from_scratch.html">Agglomerative Clustering From Scratch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/cluster/Reference_Ch3_part_1_compare_kmeans_kcenter_on_simulated_data.html">Compare K-Means and K-Center on Simulated Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/cluster/Reference_Ch3_part_1_dbscan_from_scratch.html">DBSCAN From Scratch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/cluster/Reference_Ch3_part_1_kcenter_from_scratch.html">K-Center From Scratch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/cluster/Reference_Ch3_part_1_kmeans_from_scratch.html">KMeans From Scratch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/cluster/Reference_Ch3_part_1_sklearn_clustering_example.html">SKLearn Clustering Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/reduction/Reference_Ch3_part_1_pca_step_by_step.html">PCA from Scratch (Eigen Decomposition)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/linear_models/Reference_Ch4_Part_1_linear_regression.html">Linear Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/linear_models/Reference_Ch4_Part_1_logistic_regression.html">Logistic regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/linear_models/Reference_Ch4_Part_1_polynomial_fitting_overfitting_add_regularization.html">Avoid Overfitting using Regularization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/linear_models/Reference_Ch4_Part_1_polynomial_fitting_overfitting_and_cross_validation.html">Overfitting and Cross-Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/linear_models/Reference_Ch4_Part_1_regularization_effect_explained.html">Explain Effect of Regularization using One Feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/non_parametric/Reference_Ch4_part_2_decision_tree.html">Decision Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/non_parametric/Reference_Ch4_part_2_kNN.html">K-nearest Neighbour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/nn/Reference_Ch5_Part_1_multi_class_softmax_regression.html">Multi-class Classification Using Softmax Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/nn/Reference_Ch5_Part_3_MLP.html">Multilayer Perceptron (MLP) - An example to compare the linear model with the MLP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/nn/Reference_Ch5_Part_4_avoid_overfitting_techniques.html">Techniques to Prevent Overfitting in Neural Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/nn/Reference_ch5_Part_2_xor.html">A simple nonlinear dataset: XOR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/deep_nn/Reference_ch6_Part_1_CNNs_colab.html">Predict log EC50s of Dual-Agonist Peptides using Convolutional Neural Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/deep_nn/Reference_ch6_Part_2_GNN_colab.html">Predict Molecular Property using Graph Neural Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/deep_nn/Reference_ch6_Part_3_rnn_colab.html">Predict Molecular Property using Recurrent Neural Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/generative/Reference_Ch7_VAE_colab.html">Generate SMILES using VAE+RNN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/transformer/Reference_Ch8_PLM_colab.html">Predict log EC50s of Dual-Agonists Peptide using Pretrained Protein Language Model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../homeworks.html">Hands-on Homeworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how2cite.html">How to Cite</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <div class="colab-button">
+    <a href="https://colab.research.google.com/github/xuhuihuang/mlchem/blob/main/homeworks/hw1/Chem361_hw1_reference.ipynb" target="_blank">
+        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab">
+    </a>
+</div><section id="CHEM361---Reference-Jupyter-Notebook-for-Homework-1">
+<h1>CHEM361 - Reference Jupyter Notebook for Homework 1<a class="headerlink" href="#CHEM361---Reference-Jupyter-Notebook-for-Homework-1" title="Link to this heading">¶</a></h1>
+<p>This notebook demonstrates</p>
+<ul class="simple">
+<li><p>How to use <code class="docutils literal notranslate"><span class="pre">rdkit</span></code> to load molecules, calculate molecular properties, calculate morgan fingerprints.</p></li>
+<li><p>How to use clustering and dimensionality reduction methods available in <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> (aka <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>) on chemical compounds to discover underlying patterns.</p></li>
+</ul>
+<section id="1.-Install-Dependencies-and-Download-Dataset">
+<h2>1. Install Dependencies and Download Dataset<a class="headerlink" href="#1.-Install-Dependencies-and-Download-Dataset" title="Link to this heading">¶</a></h2>
+<p>The packages and dataset required in this assignment are the same as in “homework0_reference.ipynb”.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>rdkit<span class="w"> </span>scikit-learn<span class="w"> </span>wget
+
+<span class="o">!</span>python<span class="w"> </span>-m<span class="w"> </span>wget<span class="w"> </span>https://raw.githubusercontent.com/deepchem/deepchem/master/datasets/delaney-processed.csv<span class="w"> </span><span class="err">\</span>
+    <span class="o">--</span><span class="n">output</span> <span class="n">delaney</span><span class="o">-</span><span class="n">processed</span><span class="o">.</span><span class="n">csv</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="2.-Molecular-Representations">
+<h2>2. Molecular Representations<a class="headerlink" href="#2.-Molecular-Representations" title="Link to this heading">¶</a></h2>
+<section id="2.1-Load-Molecule-from-SMILES">
+<h3>2.1 Load Molecule from SMILES<a class="headerlink" href="#2.1-Load-Molecule-from-SMILES" title="Link to this heading">¶</a></h3>
+<p>We will practice about how to load molecule from SMILES in RDKit.</p>
+<p><code class="docutils literal notranslate"><span class="pre">rdkit</span></code> can convert any valid SMILES to a molecule automatically. Firstly, we import <code class="docutils literal notranslate"><span class="pre">rdkit.Chem</span></code> module that contains basic functions for woriking with small molecules, such as loading molecules and calculating molecular properties.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rdkit.Chem</span> <span class="k">as</span> <span class="nn">Chem</span>
+
+<span class="c1"># caffeine</span>
+<span class="n">smi</span> <span class="o">=</span> <span class="s2">&quot;Cn1c(=O)c2c(ncn2C)n(C)c1=O&quot;</span>
+<span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smi</span><span class="p">)</span>
+<span class="n">mol</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/homeworks_hw1_Chem361_hw1_reference_6_0.png" src="../../_images/homeworks_hw1_Chem361_hw1_reference_6_0.png" />
+</div>
+</div>
+</section>
+<section id="2.2-Canonical-SMILES">
+<h3>2.2 Canonical SMILES<a class="headerlink" href="#2.2-Canonical-SMILES" title="Link to this heading">¶</a></h3>
+<p>Convert the molecule to canonical SMILES</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Chem</span><span class="o">.</span><span class="n">MolToSmiles</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">canonical</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;Cn1c(=O)c2c(ncn2C)n(C)c1=O&#39;
+</pre></div></div>
+</div>
+<p>Similarly, you can try the other two SMILES examples for caffeine mentioned in the lecture.</p>
+<p>Below is the SMILES string for Caffeine from PubChem</p>
+<p>CN1C=NC2=C1C(=O)N(C(=O)N2C)C</p>
+<img alt="Screenshot 2025-01-25 at 3.37.33 PM.png" src="data:image/png;base64,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" />
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smi1</span> <span class="o">=</span> <span class="s2">&quot;CN1C=NC2=C1C(=O)N(C(=O)N2C)C&quot;</span>
+<span class="n">mol1</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smi1</span><span class="p">)</span>
+<span class="n">can_smi1</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolToSmiles</span><span class="p">(</span><span class="n">mol1</span><span class="p">,</span> <span class="n">canonical</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The canonical SMILES in RDKit for </span><span class="si">{</span><span class="n">smi1</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">can_smi1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">mol1</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The canonical SMILES in RDKit for CN1C=NC2=C1C(=O)N(C(=O)N2C)C is Cn1c(=O)c2c(ncn2C)n(C)c1=O
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/homeworks_hw1_Chem361_hw1_reference_11_1.png" src="../../_images/homeworks_hw1_Chem361_hw1_reference_11_1.png" />
+</div>
+</div>
+<p>Below is another SMILES string for Caffeine:</p>
+<p>CN1C(=O)C2=C(N=CN2C)N(C)C1=O</p>
+<img alt="Screenshot 2025-01-25 at 3.38.18 PM.png" src="data:image/png;base64,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" />
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smi2</span> <span class="o">=</span> <span class="s2">&quot;CN1C(=O)C2=C(N=CN2C)N(C)C1=O&quot;</span>
+<span class="n">mol2</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smi2</span><span class="p">)</span>
+<span class="n">can_smi2</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolToSmiles</span><span class="p">(</span><span class="n">mol2</span><span class="p">,</span> <span class="n">canonical</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The canonical SMILES in RDKit for </span><span class="si">{</span><span class="n">smi2</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">can_smi2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">mol2</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The canonical SMILES in RDKit for CN1C(=O)C2=C(N=CN2C)N(C)C1=O is Cn1c(=O)c2c(ncn2C)n(C)c1=O
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/homeworks_hw1_Chem361_hw1_reference_13_1.png" src="../../_images/homeworks_hw1_Chem361_hw1_reference_13_1.png" />
+</div>
+</div>
+<p>The above results show that three SMILES strings for caffeine discussed in the lecture. However, according to the canonical SMILES string scheme in RDkit, the following one:<code class="docutils literal notranslate"><span class="pre">&quot;Cn1c(=O)c2c(ncn2C)n(C)c1=O&quot;</span></code> is canonical.</p>
+<p><strong>However</strong>, if you look up the caffeine <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/compound/2519">CID2519</a> in the PubChem database, you’ll notice that PubChem uses a different canonical SMILES string <code class="docutils literal notranslate"><span class="pre">&quot;CN1C=NC2=C1C(=O)N(C(=O)N2C)C&quot;</span></code>. This difference arises because there are multiple canonicalization algorithms.</p>
+<p><strong>Note</strong>: Don’t worry too much about canonical SMILES if your primal goal is to use SMILES for loading molecules. However, if you need a one-to-one mapping between a molecule and its SMILES, make sure to stick to one specific canonicalization algorithm.</p>
+</section>
+<section id="2.3.-Morgan-Fingerprints-and-Bit-Collisions">
+<h3>2.3. Morgan Fingerprints and Bit Collisions<a class="headerlink" href="#2.3.-Morgan-Fingerprints-and-Bit-Collisions" title="Link to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">RDKit.Chem.AllChem</span></code> contains more advanced functions, such as calculating fingerprints and generating molecular conformation. To calculate Morgan fingerprint, we need to pass in a radius parameter <code class="docutils literal notranslate"><span class="pre">radius</span></code> and a length parameter <code class="docutils literal notranslate"><span class="pre">nBits</span></code>.</p>
+<p>Don’t worry if you see a deprecation warning when using <code class="docutils literal notranslate"><span class="pre">AllChem.GetMorganFingerprintAsBitVect</span></code> function, this function still works.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rdkit.Chem.AllChem</span> <span class="k">as</span> <span class="nn">AllChem</span>
+
+<span class="n">fp</span> <span class="o">=</span> <span class="n">AllChem</span><span class="o">.</span><span class="n">GetMorganFingerprintAsBitVect</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nBits</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+[16:02:35] DEPRECATION WARNING: please use MorganGenerator
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Positions of 1-bit:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">fp</span><span class="o">.</span><span class="n">GetOnBits</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;, &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Positions of 1-bit:
+0, 33, 121, 179, 234, 283, 314, 330, 356, 378, 385, 400, 416, 428, 463, 493, 504, 564, 650, 672, 771, 849, 932, 935,
+</pre></div></div>
+</div>
+<p>We can draw the subgraphs for the “1” bits. Firstly, we need to import the module <code class="docutils literal notranslate"><span class="pre">rdkit.Chem.Draw</span></code> for RDKit plotting. Secondly, we need to pass a dictionary <code class="docutils literal notranslate"><span class="pre">bi</span></code> to the fingerprint calculation, for storing the subgraphs.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rdkit.Chem.Draw</span> <span class="k">as</span> <span class="nn">Draw</span>
+
+<span class="n">bi</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># bit info</span>
+<span class="n">fp</span> <span class="o">=</span> <span class="n">AllChem</span><span class="o">.</span><span class="n">GetMorganFingerprintAsBitVect</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nBits</span><span class="o">=</span><span class="mi">2048</span><span class="p">,</span> <span class="n">bitInfo</span><span class="o">=</span><span class="n">bi</span><span class="p">)</span>
+
+<span class="n">idx</span> <span class="o">=</span> <span class="mi">33</span>
+<span class="n">on_bits</span> <span class="o">=</span> <span class="p">[(</span><span class="n">mol</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">bi</span><span class="p">)]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;Bit </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span>
+<span class="n">Draw</span><span class="o">.</span><span class="n">DrawMorganBits</span><span class="p">(</span><span class="n">on_bits</span><span class="p">,</span> <span class="n">molsPerRow</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">legends</span><span class="o">=</span><span class="n">labels</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+[16:02:35] DEPRECATION WARNING: please use MorganGenerator
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/homeworks_hw1_Chem361_hw1_reference_20_1.png" src="../../_images/homeworks_hw1_Chem361_hw1_reference_20_1.png" />
+</div>
+</div>
+</section>
+<section id="2.4.-Molecular-Properties">
+<h3>2.4. Molecular Properties<a class="headerlink" href="#2.4.-Molecular-Properties" title="Link to this heading">¶</a></h3>
+<p>The rdkit.Chem.Descriptors module contains a wide variety of molecular descriptors that can be directly accessed to compute additional properties for molecules. For example, we can calculate some basic molecular descriptors:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">rdkit.Chem.Descriptors</span> <span class="k">as</span> <span class="nn">Descriptors</span>
+<span class="n">property_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="n">Descriptors</span><span class="o">.</span><span class="n">MolWt</span><span class="p">(</span><span class="n">mol</span><span class="p">),</span>
+    <span class="n">Chem</span><span class="o">.</span><span class="n">Lipinski</span><span class="o">.</span><span class="n">NumHAcceptors</span><span class="p">(</span><span class="n">mol</span><span class="p">),</span>
+    <span class="n">Chem</span><span class="o">.</span><span class="n">Lipinski</span><span class="o">.</span><span class="n">NumHDonors</span><span class="p">(</span><span class="n">mol</span><span class="p">),</span>
+    <span class="n">Chem</span><span class="o">.</span><span class="n">Lipinski</span><span class="o">.</span><span class="n">RingCount</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+<span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Custom molecular descriptor array:&quot;</span><span class="p">,</span> <span class="n">property_array</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Custom molecular descriptor array: [194.194   6.      0.      2.   ]
+</pre></div></div>
+</div>
+<p>The concept of “drug-likeness” often involves applying specific rules or scoring functions, such as Lipinski’s Rule of Five or the QED (Quantitative Estimation of Drug-likeness) as described in the paper “<a class="reference external" href="https://doi.org/10.1038/nchem.1243">Quantifying the chemical beauty of drugs</a>” (Nature Chemistry, 2012).</p>
+<p>RDKit implements QED directly, making it easy to compute drug-likeness scores for molecules.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># quantitative estimation of drug-likeness (QED)</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">Descriptors</span><span class="o">.</span><span class="n">qed</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;QED of caffeine:&quot;</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+QED of caffeine: 0.5384628262372215
+</pre></div></div>
+</div>
+<p>More scripts and workflows developed by the community are available at the <a class="reference external" href="https://github.com/rdkit/rdkit/tree/master/Contrib">rdkit.Contrib</a>. The is not a module that can be imported directly. If you want to calculate the synthetic accessibility score (SAScore) of molecules in organic synthesis, you can use the following blocks to:</p>
+<ol class="arabic simple">
+<li><p>download scripts from the repository</p></li>
+<li><p>add the script to the system path</p></li>
+<li><p>import thhe script and do calculation</p></li>
+</ol>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Download source code to compute synthetic availability score from rdkit</span>
+<span class="o">!</span>python<span class="w"> </span>-m<span class="w"> </span>wget<span class="w"> </span>https://raw.githubusercontent.com/rdkit/rdkit/master/Contrib/SA_Score/sascorer.py
+<span class="o">!</span>python<span class="w"> </span>-m<span class="w"> </span>wget<span class="w"> </span>https://raw.githubusercontent.com/rdkit/rdkit/master/Contrib/SA_Score/fpscores.pkl.gz
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+Saved under sascorer.py
+
+Saved under fpscores.pkl.gz
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">RDConfig</span>
+<span class="c1"># using literature contributors</span>
+<span class="c1"># from https://github.com/rdkit/rdkit/tree/master/Contrib</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">RDConfig</span><span class="o">.</span><span class="n">RDContribDir</span><span class="p">,</span> <span class="s1">&#39;SA_Score&#39;</span><span class="p">))</span>
+
+<span class="kn">import</span> <span class="nn">sascorer</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">sascorer</span><span class="o">.</span><span class="n">calculateScore</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Synthetic Availability:&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Synthetic Availability: 2.29798245679401
+</pre></div></div>
+</div>
+</section>
+</section>
+<section id="3.-Work-on-a-Dataset">
+<h2>3. Work on a Dataset<a class="headerlink" href="#3.-Work-on-a-Dataset" title="Link to this heading">¶</a></h2>
+<p>You are an expert in SMILES, molecular properties, and fingerprints. In this section, we will explore how to apply the functions mentioned in the above section to multiple molecules.</p>
+<section id="3.1-Load-Dataset">
+<h3>3.1 Load Dataset<a class="headerlink" href="#3.1-Load-Dataset" title="Link to this heading">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">DELANEY_FILE</span> <span class="o">=</span> <span class="s2">&quot;delaney-processed.csv&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DELANEY_FILE</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of molecules in the dataset: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Number of molecules in the dataset: 1128
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Compound ID</th>
+      <th>ESOL predicted log solubility in mols per litre</th>
+      <th>Minimum Degree</th>
+      <th>Molecular Weight</th>
+      <th>Number of H-Bond Donors</th>
+      <th>Number of Rings</th>
+      <th>Number of Rotatable Bonds</th>
+      <th>Polar Surface Area</th>
+      <th>measured log solubility in mols per litre</th>
+      <th>smiles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Amigdalin</td>
+      <td>-0.974</td>
+      <td>1</td>
+      <td>457.432</td>
+      <td>7</td>
+      <td>3</td>
+      <td>7</td>
+      <td>202.32</td>
+      <td>-0.77</td>
+      <td>OCC3OC(OCC2OC(OC(C#N)c1ccccc1)C(O)C(O)C2O)C(O)...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Fenfuram</td>
+      <td>-2.885</td>
+      <td>1</td>
+      <td>201.225</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>42.24</td>
+      <td>-3.30</td>
+      <td>Cc1occc1C(=O)Nc2ccccc2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>citral</td>
+      <td>-2.579</td>
+      <td>1</td>
+      <td>152.237</td>
+      <td>0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>17.07</td>
+      <td>-2.06</td>
+      <td>CC(C)=CCCC(C)=CC(=O)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Picene</td>
+      <td>-6.618</td>
+      <td>2</td>
+      <td>278.354</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>-7.87</td>
+      <td>c1ccc2c(c1)ccc3c2ccc4c5ccccc5ccc43</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Thiophene</td>
+      <td>-2.232</td>
+      <td>2</td>
+      <td>84.143</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>-1.33</td>
+      <td>c1ccsc1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="3.2.-Pandas-DataFrame-Operations">
+<h3>3.2. Pandas DataFrame Operations<a class="headerlink" href="#3.2.-Pandas-DataFrame-Operations" title="Link to this heading">¶</a></h3>
+<p>Recap in Homework 0, we created a molecule from each SMILES and stored the created molecules in a new column “mol” using the following command:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">PandasTools</span>
+<span class="n">PandasTools</span><span class="o">.</span><span class="n">AddMoleculeColumnToFrame</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s2">&quot;smiles&quot;</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Equivalent, we can use <code class="docutils literal notranslate"><span class="pre">Chem.MolFromSmiles</span></code> to create molecules:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># fetch the smiles column in df</span>
+<span class="n">smis</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;smiles&quot;</span><span class="p">]</span>
+
+<span class="c1"># apply Chem.MolFromSmiles for each SMILES string</span>
+<span class="c1"># mols is a column of molecules</span>
+<span class="n">mols</span> <span class="o">=</span> <span class="n">smis</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="c1"># add mols to df</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;mol&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mols</span>
+</pre></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get molecules from smiles</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;mol&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;smiles&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<p>Morgan fingerpring of each molecule in the dataset can be calculated using <code class="docutils literal notranslate"><span class="pre">df.apply</span></code> together with the <code class="docutils literal notranslate"><span class="pre">lambda</span></code> function. Just in case the deprecated warning of <code class="docutils literal notranslate"><span class="pre">AllChem.GetMorganFingerprintAsBitVect</span></code> occur repeatedly, we can use a new function when calculating the fingerprints of multiple molecules.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># rdFingerprintGenerator is recommended in the newer versions of rdkit to replace AllChem.GetMorganFingerprintAsBitVect</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">rdFingerprintGenerator</span>
+
+<span class="n">morgan_fp_gen</span> <span class="o">=</span> <span class="n">rdFingerprintGenerator</span><span class="o">.</span><span class="n">GetMorganGenerator</span><span class="p">(</span><span class="n">includeChirality</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">fpSize</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
+
+<span class="c1"># morgan_fp_gen.GetFingerprint(mol) converts a mol to a fingerprint</span>
+<span class="c1"># we use apply to convert all mols to fingerprints</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;fp&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;mol&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">morgan_fp_gen</span><span class="o">.</span><span class="n">GetFingerprint</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<p>Now let’s check the dataframe. There should be two additional columns: “mol” and “fp”.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Compound ID</th>
+      <th>ESOL predicted log solubility in mols per litre</th>
+      <th>Minimum Degree</th>
+      <th>Molecular Weight</th>
+      <th>Number of H-Bond Donors</th>
+      <th>Number of Rings</th>
+      <th>Number of Rotatable Bonds</th>
+      <th>Polar Surface Area</th>
+      <th>measured log solubility in mols per litre</th>
+      <th>smiles</th>
+      <th>mol</th>
+      <th>fp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Amigdalin</td>
+      <td>-0.974</td>
+      <td>1</td>
+      <td>457.432</td>
+      <td>7</td>
+      <td>3</td>
+      <td>7</td>
+      <td>202.32</td>
+      <td>-0.77</td>
+      <td>OCC3OC(OCC2OC(OC(C#N)c1ccccc1)C(O)C(O)C2O)C(O)...</td>
+      <td>&lt;rdkit.Chem.rdchem.Mol object at 0x00000228672...</td>
+      <td>[0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, ...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Fenfuram</td>
+      <td>-2.885</td>
+      <td>1</td>
+      <td>201.225</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>42.24</td>
+      <td>-3.30</td>
+      <td>Cc1occc1C(=O)Nc2ccccc2</td>
+      <td>&lt;rdkit.Chem.rdchem.Mol object at 0x00000228672...</td>
+      <td>[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>citral</td>
+      <td>-2.579</td>
+      <td>1</td>
+      <td>152.237</td>
+      <td>0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>17.07</td>
+      <td>-2.06</td>
+      <td>CC(C)=CCCC(C)=CC(=O)</td>
+      <td>&lt;rdkit.Chem.rdchem.Mol object at 0x00000228672...</td>
+      <td>[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+</section>
+<section id="4.-Clustering">
+<h2>4. Clustering<a class="headerlink" href="#4.-Clustering" title="Link to this heading">¶</a></h2>
+<p>We want to clustering using “Molecular Weight”, “Number of H-Bond Donors”, “Number of Rings” and “Number of Rotatable Bonds”. We can select these columns from the dataframe.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># select multi-columns</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;Molecular Weight&quot;</span><span class="p">,</span> <span class="s2">&quot;Number of H-Bond Donors&quot;</span><span class="p">,</span> <span class="s2">&quot;Number of Rings&quot;</span><span class="p">,</span> <span class="s2">&quot;Number of Rotatable Bonds&quot;</span><span class="p">]]</span>
+
+<span class="c1"># keep values only, discard the df.index</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">values</span>
+
+<span class="c1"># print the shape</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of X:&quot;</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Shape of X: (1128, 4)
+</pre></div></div>
+</div>
+<p>You can print the values in X to check.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[[457.432   7.      3.      7.   ]
+ [201.225   1.      2.      2.   ]
+ [152.237   0.      0.      4.   ]
+ ...
+ [246.359   0.      0.      7.   ]
+ [ 72.151   0.      0.      1.   ]
+ [365.964   0.      1.      5.   ]]
+</pre></div></div>
+</div>
+<p>The matrix shape means that it has 1128 rows (the number of molecules), and 4 columns (the number of features we chose).</p>
+<section id="4.1-Data-Normalization">
+<h3>4.1 Data Normalization<a class="headerlink" href="#4.1-Data-Normalization" title="Link to this heading">¶</a></h3>
+<p>As we highlighted in the lecture, data normalization is important, especially for techniques like clustering and PCA. One common way to normalize data is by using <code class="docutils literal notranslate"><span class="pre">StandardScalar</span></code> from the <code class="docutils literal notranslate"><span class="pre">sklearn.preprocessing</span></code> module. The formula for normalization is:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[Z = \frac{X-\mu}{\sigma}\]</div>
+</div>
+<p>This scaling method substracts the mean <span class="math notranslate nohighlight">\(\mu\)</span> from the original data and divides by the standard deviation (<span class="math notranslate nohighlight">\(\sigma\)</span>), ensuring that each feature has a mean of 0 and a standard deviation of 1.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="c1"># create a scaler object</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+
+<span class="c1"># transform X to Z, Z has a mean of 0 and std of 1</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Z</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([[ 2.46848464,  5.78268892,  1.22109812,  1.82691435],
+       [-0.02640966,  0.27428095,  0.46220077, -0.06716597],
+       [-0.50344534, -0.64378704, -1.05559391,  0.69046616],
+       ...,
+       [ 0.41309652, -0.64378704, -1.05559391,  1.82691435],
+       [-1.28330735, -0.64378704, -1.05559391, -0.44598203],
+       [ 1.57778691, -0.64378704, -0.29669657,  1.06928222]],
+      shape=(1128, 4))
+</pre></div></div>
+</div>
+<p>You can calculate the mean and std of each feature using the following commands to check that <code class="docutils literal notranslate"><span class="pre">StandardScalar</span></code> did a good job in normalizing the data.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Check the mean of each feature:&quot;</span><span class="p">,</span> <span class="n">Z</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Check the std of each feature:&quot;</span><span class="p">,</span> <span class="n">Z</span><span class="o">.</span><span class="n">sdt</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="4.2-K-means-Clustering">
+<h3>4.2 K-means Clustering<a class="headerlink" href="#4.2-K-means-Clustering" title="Link to this heading">¶</a></h3>
+<p>We don’t have reinvent the wheel every time we use a well-established method. After understanding the fundamentals of KMeans algorithm, we can confidently use <code class="docutils literal notranslate"><span class="pre">KMeans</span></code> from <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>. There are two major decisions to make when using KMeans:</p>
+<ol class="arabic simple">
+<li><p>the number of clusters (<code class="docutils literal notranslate"><span class="pre">n_clusters</span></code>)</p></li>
+<li><p>the initial centers</p></li>
+</ol>
+<p>By default, <code class="docutils literal notranslate"><span class="pre">sklearn.cluster.KMeans</span></code> use the “k-means++” method to find initial centers. This method aims to find initial centers that are spread out, which helps improve the performance and convergence of the algorithm.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
+
+<span class="c1"># please explore n_clusters</span>
+<span class="n">n_clusters</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">k_means</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s2">&quot;k-means++&quot;</span><span class="p">)</span>
+
+<span class="c1"># fit data</span>
+<span class="n">k_means</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
+
+<span class="c1"># fetch predicted labels for each datapoint</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">k_means</span><span class="o">.</span><span class="n">labels_</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+c:\Users\24153\anaconda3\envs\chem361\lib\site-packages\sklearn\cluster\_kmeans.py:1411: UserWarning: KMeans is known to have a memory leak on Windows with MKL, when there are less chunks than available threads. You can avoid it by setting the environment variable OMP_NUM_THREADS=5.
+  warnings.warn(
+</pre></div></div>
+</div>
+<p>We can find the number of molecules in each cluster (cluster size).</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># you can use for-loop to find out the size, but here&#39;s a quicker way</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="n">Counter</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Counter({np.int32(0): 647, np.int32(2): 324, np.int32(1): 157})
+</pre></div></div>
+</div>
+<p>Let’s fetch the value of loss function (sum of squared distance)</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssd</span> <span class="o">=</span> <span class="n">k_means</span><span class="o">.</span><span class="n">inertia_</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sum of squared distance after model fitting: </span><span class="si">{</span><span class="n">ssd</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Sum of squared distance after model fitting: 2516.39
+</pre></div></div>
+</div>
+<p>You can apply the expirical “elbo” method to pick a better <code class="docutils literal notranslate"><span class="pre">n_clusters</span></code> from this plot.</p>
+</section>
+<section id="4.3-DBSCAN-Clustering">
+<h3>4.3 DBSCAN Clustering<a class="headerlink" href="#4.3-DBSCAN-Clustering" title="Link to this heading">¶</a></h3>
+<p>There are two major decisions to make when using DBSCAN:</p>
+<ol class="arabic simple">
+<li><p>the distance <code class="docutils literal notranslate"><span class="pre">eps</span></code> used to build <span class="math notranslate nohighlight">\(\epsilon\)</span>-neighbourhood</p></li>
+<li><p>the minimum number of neighbours <code class="docutils literal notranslate"><span class="pre">min_samples</span></code> to determine core points</p></li>
+</ol>
+<p>It is important to note that</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">DBSCAN</span>
+
+<span class="n">eps</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">min_samples</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="n">dbscan</span> <span class="o">=</span> <span class="n">DBSCAN</span><span class="p">(</span><span class="n">eps</span><span class="o">=</span><span class="n">eps</span><span class="p">,</span> <span class="n">min_samples</span><span class="o">=</span><span class="n">min_samples</span><span class="p">,</span> \
+    <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;euclidean&quot;</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">)</span>
+
+<span class="n">dbscan</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<style>#sk-container-id-1 {
+  /* Definition of color scheme common for light and dark mode */
+  --sklearn-color-text: #000;
+  --sklearn-color-text-muted: #666;
+  --sklearn-color-line: gray;
+  /* Definition of color scheme for unfitted estimators */
+  --sklearn-color-unfitted-level-0: #fff5e6;
+  --sklearn-color-unfitted-level-1: #f6e4d2;
+  --sklearn-color-unfitted-level-2: #ffe0b3;
+  --sklearn-color-unfitted-level-3: chocolate;
+  /* Definition of color scheme for fitted estimators */
+  --sklearn-color-fitted-level-0: #f0f8ff;
+  --sklearn-color-fitted-level-1: #d4ebff;
+  --sklearn-color-fitted-level-2: #b3dbfd;
+  --sklearn-color-fitted-level-3: cornflowerblue;
+
+  /* Specific color for light theme */
+  --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
+  --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-icon: #696969;
+
+  @media (prefers-color-scheme: dark) {
+    /* Redefinition of color scheme for dark theme */
+    --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
+    --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-icon: #878787;
+  }
+}
+
+#sk-container-id-1 {
+  color: var(--sklearn-color-text);
+}
+
+#sk-container-id-1 pre {
+  padding: 0;
+}
+
+#sk-container-id-1 input.sk-hidden--visually {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#sk-container-id-1 div.sk-dashed-wrapped {
+  border: 1px dashed var(--sklearn-color-line);
+  margin: 0 0.4em 0.5em 0.4em;
+  box-sizing: border-box;
+  padding-bottom: 0.4em;
+  background-color: var(--sklearn-color-background);
+}
+
+#sk-container-id-1 div.sk-container {
+  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
+     but bootstrap.min.css set `[hidden] { display: none !important; }`
+     so we also need the `!important` here to be able to override the
+     default hidden behavior on the sphinx rendered scikit-learn.org.
+     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
+  display: inline-block !important;
+  position: relative;
+}
+
+#sk-container-id-1 div.sk-text-repr-fallback {
+  display: none;
+}
+
+div.sk-parallel-item,
+div.sk-serial,
+div.sk-item {
+  /* draw centered vertical line to link estimators */
+  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
+  background-size: 2px 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Parallel-specific style estimator block */
+
+#sk-container-id-1 div.sk-parallel-item::after {
+  content: "";
+  width: 100%;
+  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
+  flex-grow: 1;
+}
+
+#sk-container-id-1 div.sk-parallel {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background-color: var(--sklearn-color-background);
+  position: relative;
+}
+
+#sk-container-id-1 div.sk-parallel-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#sk-container-id-1 div.sk-parallel-item:first-child::after {
+  align-self: flex-end;
+  width: 50%;
+}
+
+#sk-container-id-1 div.sk-parallel-item:last-child::after {
+  align-self: flex-start;
+  width: 50%;
+}
+
+#sk-container-id-1 div.sk-parallel-item:only-child::after {
+  width: 0;
+}
+
+/* Serial-specific style estimator block */
+
+#sk-container-id-1 div.sk-serial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--sklearn-color-background);
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+
+/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
+clickable and can be expanded/collapsed.
+- Pipeline and ColumnTransformer use this feature and define the default style
+- Estimators will overwrite some part of the style using the `sk-estimator` class
+*/
+
+/* Pipeline and ColumnTransformer style (default) */
+
+#sk-container-id-1 div.sk-toggleable {
+  /* Default theme specific background. It is overwritten whether we have a
+  specific estimator or a Pipeline/ColumnTransformer */
+  background-color: var(--sklearn-color-background);
+}
+
+/* Toggleable label */
+#sk-container-id-1 label.sk-toggleable__label {
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+  text-align: center;
+  align-items: start;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+
+#sk-container-id-1 label.sk-toggleable__label .caption {
+  font-size: 0.6rem;
+  font-weight: lighter;
+  color: var(--sklearn-color-text-muted);
+}
+
+#sk-container-id-1 label.sk-toggleable__label-arrow:before {
+  /* Arrow on the left of the label */
+  content: "▸";
+  float: left;
+  margin-right: 0.25em;
+  color: var(--sklearn-color-icon);
+}
+
+#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {
+  color: var(--sklearn-color-text);
+}
+
+/* Toggleable content - dropdown */
+
+#sk-container-id-1 div.sk-toggleable__content {
+  max-height: 0;
+  max-width: 0;
+  overflow: hidden;
+  text-align: left;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content pre {
+  margin: 0.2em;
+  border-radius: 0.25em;
+  color: var(--sklearn-color-text);
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content.fitted pre {
+  /* unfitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+  /* Expand drop-down */
+  max-height: 200px;
+  max-width: 100%;
+  overflow: auto;
+}
+
+#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+  content: "▾";
+}
+
+/* Pipeline/ColumnTransformer-specific style */
+
+#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator-specific style */
+
+/* Colorize estimator box */
+#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+#sk-container-id-1 div.sk-label label.sk-toggleable__label,
+#sk-container-id-1 div.sk-label label {
+  /* The background is the default theme color */
+  color: var(--sklearn-color-text-on-default-background);
+}
+
+/* On hover, darken the color of the background */
+#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+/* Label box, darken color on hover, fitted */
+#sk-container-id-1 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator label */
+
+#sk-container-id-1 div.sk-label label {
+  font-family: monospace;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1.2em;
+}
+
+#sk-container-id-1 div.sk-label-container {
+  text-align: center;
+}
+
+/* Estimator-specific */
+#sk-container-id-1 div.sk-estimator {
+  font-family: monospace;
+  border: 1px dotted var(--sklearn-color-border-box);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  margin-bottom: 0.5em;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+/* on hover */
+#sk-container-id-1 div.sk-estimator:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Specification for estimator info (e.g. "i" and "?") */
+
+/* Common style for "i" and "?" */
+
+.sk-estimator-doc-link,
+a:link.sk-estimator-doc-link,
+a:visited.sk-estimator-doc-link {
+  float: right;
+  font-size: smaller;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1em;
+  height: 1em;
+  width: 1em;
+  text-decoration: none !important;
+  margin-left: 0.5em;
+  text-align: center;
+  /* unfitted */
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-1);
+}
+
+.sk-estimator-doc-link.fitted,
+a:link.sk-estimator-doc-link.fitted,
+a:visited.sk-estimator-doc-link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+div.sk-estimator:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover,
+div.sk-label-container:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover,
+div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+/* Span, style for the box shown on hovering the info icon */
+.sk-estimator-doc-link span {
+  display: none;
+  z-index: 9999;
+  position: relative;
+  font-weight: normal;
+  right: .2ex;
+  padding: .5ex;
+  margin: .5ex;
+  width: min-content;
+  min-width: 20ex;
+  max-width: 50ex;
+  color: var(--sklearn-color-text);
+  box-shadow: 2pt 2pt 4pt #999;
+  /* unfitted */
+  background: var(--sklearn-color-unfitted-level-0);
+  border: .5pt solid var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted span {
+  /* fitted */
+  background: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3);
+}
+
+.sk-estimator-doc-link:hover span {
+  display: block;
+}
+
+/* "?"-specific style due to the `<a>` HTML tag */
+
+#sk-container-id-1 a.estimator_doc_link {
+  float: right;
+  font-size: 1rem;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1rem;
+  height: 1rem;
+  width: 1rem;
+  text-decoration: none;
+  /* unfitted */
+  color: var(--sklearn-color-unfitted-level-1);
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+}
+
+#sk-container-id-1 a.estimator_doc_link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+#sk-container-id-1 a.estimator_doc_link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+#sk-container-id-1 a.estimator_doc_link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+}
+</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>DBSCAN()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>DBSCAN</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.6/modules/generated/sklearn.cluster.DBSCAN.html">?<span>Documentation for DBSCAN</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>DBSCAN()</pre></div> </div></div></div></div></div>
+</div>
+<p>You can find out the number of clusters after DBSCAN clustering, but pay attention to points with cluster label as -1. These points are <strong>noise</strong>, not clustered.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">dbscan</span><span class="o">.</span><span class="n">labels_</span><span class="p">)</span>
+<span class="c1"># remove cluster_id=-1</span>
+<span class="n">counter</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of clusters:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">counter</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size of each cluster:&quot;</span><span class="p">,</span> <span class="n">counter</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Number of clusters: 18
+Size of each cluster: Counter({np.int64(1): 223, np.int64(3): 150, np.int64(5): 118, np.int64(4): 107, np.int64(10): 62, np.int64(7): 60, np.int64(0): 53, np.int64(11): 42, np.int64(6): 35, np.int64(8): 30, np.int64(9): 28, np.int64(12): 24, np.int64(15): 16, np.int64(13): 10, np.int64(2): 9, np.int64(16): 7, np.int64(14): 5, np.int64(17): 5})
+</pre></div></div>
+</div>
+</section>
+</section>
+<section id="5.-Dimensionality-Reduction-using-PCA">
+<h2>5. Dimensionality Reduction using PCA<a class="headerlink" href="#5.-Dimensionality-Reduction-using-PCA" title="Link to this heading">¶</a></h2>
+<section id="5.1-PCA-on-Molecular-Descriptors">
+<h3>5.1 PCA on Molecular Descriptors<a class="headerlink" href="#5.1-PCA-on-Molecular-Descriptors" title="Link to this heading">¶</a></h3>
+<p>PCA should also use data after remove mean. Therefore, we still use <span class="math notranslate nohighlight">\(Z\)</span> matrix.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="n">n_components</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">n_components</span><span class="p">)</span>
+<span class="n">pca</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
+
+<span class="n">Z_reduced</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of the reduced matrix:&quot;</span><span class="p">,</span> <span class="n">Z_reduced</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Shape of the reduced matrix: (1128, 1)
+</pre></div></div>
+</div>
+<p>The we fetch the vectors of pricipal components (the eigenvectors we mentioned in lecture).</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># principal components</span>
+<span class="n">pca</span><span class="o">.</span><span class="n">components_</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([[0.67953142, 0.37265949, 0.5759563 , 0.2600698 ]])
+</pre></div></div>
+</div>
+<p>I need to emphasize on the shape of input <code class="docutils literal notranslate"><span class="pre">Z</span></code>, the output <code class="docutils literal notranslate"><span class="pre">Z_reduced</span></code> and the PCs <code class="docutils literal notranslate"><span class="pre">pca.components_</span></code>. <code class="docutils literal notranslate"><span class="pre">Z</span></code> has the shape of (1128, 4), <code class="docutils literal notranslate"><span class="pre">Z_reduced</span></code> has the shape of (1128, 1), and <code class="docutils literal notranslate"><span class="pre">pca.components_</span></code> has the shape of <span class="math notranslate nohighlight">\((1, 4)\)</span>. The input and output of <code class="docutils literal notranslate"><span class="pre">sklearn.decomposition.PCA</span></code> are on the row space, while in equations in lecture are on the column space. Both are correct.</p>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, Xuhui Huang
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">CHEM361 - Reference Jupyter Notebook for Homework 1</a><ul>
+<li><a class="reference internal" href="#1.-Install-Dependencies-and-Download-Dataset">1. Install Dependencies and Download Dataset</a></li>
+<li><a class="reference internal" href="#2.-Molecular-Representations">2. Molecular Representations</a><ul>
+<li><a class="reference internal" href="#2.1-Load-Molecule-from-SMILES">2.1 Load Molecule from SMILES</a></li>
+<li><a class="reference internal" href="#2.2-Canonical-SMILES">2.2 Canonical SMILES</a></li>
+<li><a class="reference internal" href="#2.3.-Morgan-Fingerprints-and-Bit-Collisions">2.3. Morgan Fingerprints and Bit Collisions</a></li>
+<li><a class="reference internal" href="#2.4.-Molecular-Properties">2.4. Molecular Properties</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#3.-Work-on-a-Dataset">3. Work on a Dataset</a><ul>
+<li><a class="reference internal" href="#3.1-Load-Dataset">3.1 Load Dataset</a></li>
+<li><a class="reference internal" href="#3.2.-Pandas-DataFrame-Operations">3.2. Pandas DataFrame Operations</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#4.-Clustering">4. Clustering</a><ul>
+<li><a class="reference internal" href="#4.1-Data-Normalization">4.1 Data Normalization</a></li>
+<li><a class="reference internal" href="#4.2-K-means-Clustering">4.2 K-means Clustering</a></li>
+<li><a class="reference internal" href="#4.3-DBSCAN-Clustering">4.3 DBSCAN Clustering</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#5.-Dimensionality-Reduction-using-PCA">5. Dimensionality Reduction using PCA</a><ul>
+<li><a class="reference internal" href="#5.1-PCA-on-Molecular-Descriptors">5.1 PCA on Molecular Descriptors</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=34cd777e"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>

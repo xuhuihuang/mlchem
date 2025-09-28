@@ -1,0 +1,927 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html">
+        <link rel="prefetch" href="../../_static/logo.png" as="image">
+
+    <!-- Generated with Sphinx 8.1.3 and Furo 2025.09.25 -->
+        <title>CHEM361 - Homework0 - MLCHEM v0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=acfd86a5" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=580074bf" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-codeautolink.css?v=b2176991" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=2aa19091" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=e4905d15" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">MLCHEM v0.1 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/logo.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">MLCHEM v0.1 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Home</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../examples.html">Jupyter Notebook Tutorial Gallery</a><input aria-label="Toggle navigation of Jupyter Notebook Tutorial Gallery" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/representation/Reference_Ch2_fingerprints.html">Molecular Fingerprints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/representation/Reference_Ch2_molecular_properties.html">Molecular Descriptors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/cluster/Reference_Ch3_part_1_agglomerative_from_scratch.html">Agglomerative Clustering From Scratch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/cluster/Reference_Ch3_part_1_compare_kmeans_kcenter_on_simulated_data.html">Compare K-Means and K-Center on Simulated Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/cluster/Reference_Ch3_part_1_dbscan_from_scratch.html">DBSCAN From Scratch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/cluster/Reference_Ch3_part_1_kcenter_from_scratch.html">K-Center From Scratch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/cluster/Reference_Ch3_part_1_kmeans_from_scratch.html">KMeans From Scratch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/cluster/Reference_Ch3_part_1_sklearn_clustering_example.html">SKLearn Clustering Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/reduction/Reference_Ch3_part_1_pca_step_by_step.html">PCA from Scratch (Eigen Decomposition)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/linear_models/Reference_Ch4_Part_1_linear_regression.html">Linear Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/linear_models/Reference_Ch4_Part_1_logistic_regression.html">Logistic regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/linear_models/Reference_Ch4_Part_1_polynomial_fitting_overfitting_add_regularization.html">Avoid Overfitting using Regularization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/linear_models/Reference_Ch4_Part_1_polynomial_fitting_overfitting_and_cross_validation.html">Overfitting and Cross-Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/linear_models/Reference_Ch4_Part_1_regularization_effect_explained.html">Explain Effect of Regularization using One Feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/non_parametric/Reference_Ch4_part_2_decision_tree.html">Decision Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/non_parametric/Reference_Ch4_part_2_kNN.html">K-nearest Neighbour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/nn/Reference_Ch5_Part_1_multi_class_softmax_regression.html">Multi-class Classification Using Softmax Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/nn/Reference_Ch5_Part_3_MLP.html">Multilayer Perceptron (MLP) - An example to compare the linear model with the MLP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/nn/Reference_Ch5_Part_4_avoid_overfitting_techniques.html">Techniques to Prevent Overfitting in Neural Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/nn/Reference_ch5_Part_2_xor.html">A simple nonlinear dataset: XOR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/deep_nn/Reference_ch6_Part_1_CNNs_colab.html">Predict log EC50s of Dual-Agonist Peptides using Convolutional Neural Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/deep_nn/Reference_ch6_Part_2_GNN_colab.html">Predict Molecular Property using Graph Neural Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/deep_nn/Reference_ch6_Part_3_rnn_colab.html">Predict Molecular Property using Recurrent Neural Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/generative/Reference_Ch7_VAE_colab.html">Generate SMILES using VAE+RNN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/transformer/Reference_Ch8_PLM_colab.html">Predict log EC50s of Dual-Agonists Peptide using Pretrained Protein Language Model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../homeworks.html">Hands-on Homeworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../how2cite.html">How to Cite</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <div class="colab-button">
+    <a href="https://colab.research.google.com/github/xuhuihuang/mlchem/blob/main/homeworks/hw0/Chem361_hw0_reference.ipynb" target="_blank">
+        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab">
+    </a>
+</div><section id="CHEM361---Homework0">
+<h1>CHEM361 - Homework0<a class="headerlink" href="#CHEM361---Homework0" title="Link to this heading">¶</a></h1>
+<p>This notebook demonstrates <strong>how Python operates</strong> with simple examples of <strong>processing chemical molecule data</strong> and applying <strong>supervised learning (linear regression)</strong> techniques. For future project homework releases, each homework will include a notebook with relevant examples for guidance. Please follow this tutorial step by step, ensuring you understand each part thoroughly.</p>
+<section id="1.-Install-Dependencies">
+<h2>1. Install Dependencies<a class="headerlink" href="#1.-Install-Dependencies" title="Link to this heading">¶</a></h2>
+<p>This tutorial will require you to install the following Python packages: <em>pandas</em> [1], <em>matplotlib</em> [2], <em>scikit-learn</em> [3], <em>rdkit</em> [4]</p>
+<p>🖍 [1] <strong>pandas</strong> package - <a class="reference external" href="https://pandas.pydata.org/docs/">Website</a></p>
+<p>🖍 [2] <strong>matplotlib</strong> package - <a class="reference external" href="https://matplotlib.org/stable/index.html">Website</a></p>
+<p>🖍 [3] <strong>scikit-learn</strong> package - <a class="reference external" href="https://scikit-learn.org/dev/index.html">Website</a></p>
+<p>🖍 [4] <strong>rdkit</strong> package - <a class="reference external" href="https://www.rdkit.org/docs/">Website</a></p>
+<p>You can install these packages either by running the command <a href="#id1"><span class="problematic" id="id2">**</span></a>pip install ** in your terminal or by executing the following cell in Jupyter Notebook (if you are using Google Colab).</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>rdkit<span class="w"> </span>scikit-learn<span class="w"> </span>wget
+</pre></div>
+</div>
+</div>
+</section>
+<section id="2.-Download-Dataset">
+<h2>2. Download Dataset<a class="headerlink" href="#2.-Download-Dataset" title="Link to this heading">¶</a></h2>
+<p>wget is a command-line tool used to download files from the internet. The <strong>!</strong> at the beginning is specific to Jupyter Notebook or IPython environments. It allows you to run shell commands directly from a notebook cell. This will download and save the <strong>delaney-processed.csv</strong> file in the current working directory.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>python<span class="w"> </span>-m<span class="w"> </span>wget<span class="w"> </span>https://raw.githubusercontent.com/deepchem/deepchem/master/datasets/delaney-processed.csv
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+100% [..........................................................] 96699 / 96699
+Saved under delaney-processed.csv
+</pre></div></div>
+</div>
+</section>
+<section id="3.-Load-Dataset">
+<h2>3. Load Dataset<a class="headerlink" href="#3.-Load-Dataset" title="Link to this heading">¶</a></h2>
+<p>After downloading the chemical compound dataset containing information on compound IDs, solubility, etc, we use <em>Pandas</em> [1] to load the data into a readable format in Python. <em>Pandas</em> is a powerful Python library designed for data manipulation and analysis, providing intuitive and efficient methods to load data into DataFrames for further processing and analysis.</p>
+<p>Here’s how Pandas excels in loading data, particularly with CSV files, the most widely used format for structured data:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">DELANEY_FILE</span> <span class="o">=</span> <span class="s2">&quot;delaney-processed.csv&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DELANEY_FILE</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of molecules in the dataset: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Number of molecules in the dataset: 1128
+</pre></div></div>
+</div>
+<p>We can print the top five rows in it.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># df.head(5) means print the top five rows of the DataFrame.</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Compound ID</th>
+      <th>ESOL predicted log solubility in mols per litre</th>
+      <th>Minimum Degree</th>
+      <th>Molecular Weight</th>
+      <th>Number of H-Bond Donors</th>
+      <th>Number of Rings</th>
+      <th>Number of Rotatable Bonds</th>
+      <th>Polar Surface Area</th>
+      <th>measured log solubility in mols per litre</th>
+      <th>smiles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Amigdalin</td>
+      <td>-0.974</td>
+      <td>1</td>
+      <td>457.432</td>
+      <td>7</td>
+      <td>3</td>
+      <td>7</td>
+      <td>202.32</td>
+      <td>-0.77</td>
+      <td>OCC3OC(OCC2OC(OC(C#N)c1ccccc1)C(O)C(O)C2O)C(O)...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Fenfuram</td>
+      <td>-2.885</td>
+      <td>1</td>
+      <td>201.225</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>42.24</td>
+      <td>-3.30</td>
+      <td>Cc1occc1C(=O)Nc2ccccc2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>citral</td>
+      <td>-2.579</td>
+      <td>1</td>
+      <td>152.237</td>
+      <td>0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>17.07</td>
+      <td>-2.06</td>
+      <td>CC(C)=CCCC(C)=CC(=O)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Picene</td>
+      <td>-6.618</td>
+      <td>2</td>
+      <td>278.354</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>-7.87</td>
+      <td>c1ccc2c(c1)ccc3c2ccc4c5ccccc5ccc43</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Thiophene</td>
+      <td>-2.232</td>
+      <td>2</td>
+      <td>84.143</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>-1.33</td>
+      <td>c1ccsc1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="4.-Generate-Molecule">
+<h2>4. Generate Molecule<a class="headerlink" href="#4.-Generate-Molecule" title="Link to this heading">¶</a></h2>
+<p>We next use <em>rdkit</em> [4] to generate the molecules using their smile strings within the dataset. <em>rdkit</em> is a powerful open-source toolkit for cheminformatics, widely used for processing and analyzing chemical compound information. When working with chemical data stored in a Pandas DataFrame, <em>rdkit</em> provides seamless integration to manipulate molecular structures, calculate chemical descriptors, and perform tasks like molecular similarity calculations, fingerprint generation, or substructure
+searches. Using <em>rdkit</em>, you can convert chemical representations, such as SMILES (Simplified Molecular Input Line Entry System) strings or InChI (International Chemical Identifier), into <em>rdkit</em> molecule objects, which can then be used to extract valuable insights or visualize chemical structures directly within your DataFrame.</p>
+<p>We can create molecule objects in <em>rdkit</em> based on their smile strings using the following code:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">PandasTools</span>
+
+<span class="n">PandasTools</span><span class="o">.</span><span class="n">AddMoleculeColumnToFrame</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s2">&quot;smiles&quot;</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Compound ID</th>
+      <th>ESOL predicted log solubility in mols per litre</th>
+      <th>Minimum Degree</th>
+      <th>Molecular Weight</th>
+      <th>Number of H-Bond Donors</th>
+      <th>Number of Rings</th>
+      <th>Number of Rotatable Bonds</th>
+      <th>Polar Surface Area</th>
+      <th>measured log solubility in mols per litre</th>
+      <th>smiles</th>
+      <th>mol</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Amigdalin</td>
+      <td>-0.974</td>
+      <td>1</td>
+      <td>457.432</td>
+      <td>7</td>
+      <td>3</td>
+      <td>7</td>
+      <td>202.32</td>
+      <td>-0.77</td>
+      <td>OCC3OC(OCC2OC(OC(C#N)c1ccccc1)C(O)C(O)C2O)C(O)...</td>
+      <td>&lt;rdkit.Chem.rdchem.Mol object at 0x7efdf4f9b0b0&gt;</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Fenfuram</td>
+      <td>-2.885</td>
+      <td>1</td>
+      <td>201.225</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>42.24</td>
+      <td>-3.30</td>
+      <td>Cc1occc1C(=O)Nc2ccccc2</td>
+      <td>&lt;rdkit.Chem.rdchem.Mol object at 0x7efdf4f9b2e0&gt;</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>citral</td>
+      <td>-2.579</td>
+      <td>1</td>
+      <td>152.237</td>
+      <td>0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>17.07</td>
+      <td>-2.06</td>
+      <td>CC(C)=CCCC(C)=CC(=O)</td>
+      <td>&lt;rdkit.Chem.rdchem.Mol object at 0x7efdf4f9b270&gt;</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Picene</td>
+      <td>-6.618</td>
+      <td>2</td>
+      <td>278.354</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>-7.87</td>
+      <td>c1ccc2c(c1)ccc3c2ccc4c5ccccc5ccc43</td>
+      <td>&lt;rdkit.Chem.rdchem.Mol object at 0x7efdf4f9b350&gt;</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Thiophene</td>
+      <td>-2.232</td>
+      <td>2</td>
+      <td>84.143</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>-1.33</td>
+      <td>c1ccsc1</td>
+      <td>&lt;rdkit.Chem.rdchem.Mol object at 0x7efdf3717510&gt;</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>Visualize the molecular structure of <strong>Amigdalin</strong> (stored in the first row and last column within the DataFrame)</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># df.iloc[0, -1] retrieves the value located at the intersection of the first row and the last column of the DataFrame.</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/homeworks_hw0_Chem361_hw0_reference_17_0.png" src="../../_images/homeworks_hw0_Chem361_hw0_reference_17_0.png" />
+</div>
+</div>
+</section>
+<section id="5.-Obtain-Chemical-Properties">
+<h2>5. Obtain Chemical Properties<a class="headerlink" href="#5.-Obtain-Chemical-Properties" title="Link to this heading">¶</a></h2>
+<p>We can extract the chemical properties from the DataFrame.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">molecular_weight</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:][</span><span class="s2">&quot;Molecular Weight&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">log_solubility</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:][</span><span class="s2">&quot;ESOL predicted log solubility in mols per litre&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+<p>We use <em>matplotlib</em> [2] to visualize the data. If you’re unfamiliar with Matplotlib, we recommend consulting the official documentation or watching a YouTube tutorial for a quick introduction.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">molecular_weight</span><span class="p">,</span><span class="n">log_solubility</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Molecular Weight (Da.)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;log solubility (mol/L)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Text(0, 0.5, &#39;log solubility (mol/L)&#39;)
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/homeworks_hw0_Chem361_hw0_reference_21_1.png" src="../../_images/homeworks_hw0_Chem361_hw0_reference_21_1.png" />
+</div>
+</div>
+</section>
+<section id="6.-Linear-Regression">
+<h2>6. Linear Regression<a class="headerlink" href="#6.-Linear-Regression" title="Link to this heading">¶</a></h2>
+<p>Next, we demonstrate how to fit a <strong>linear regression</strong> model to predict a molecule’s logarithmic solubility based on its molecular weight.</p>
+<p><strong>Linear regression</strong> is a simple statistical method used to model the relationship between two variables by fitting a straight line to the data. It predicts a dependent variable (output) based on an independent variable (input). The goal is to find the line that minimizes the difference (residue sum of squares) between the predicted and actual values. In mathematical form, we denfine</p>
+<ul class="simple">
+<li><p>Linear weights <span class="math notranslate nohighlight">\(: w\)</span>, a column vector <span class="math notranslate nohighlight">\(w = (w^1, ..., w^p) \in \mathbb{R}^p\)</span></p></li>
+<li><p>Data point <span class="math notranslate nohighlight">\(: x\)</span>, a column vector <span class="math notranslate nohighlight">\(x = (x^1, ..., x^p) \in \mathbb{R}^p\)</span></p></li>
+<li><p>Target <span class="math notranslate nohighlight">\(: y\)</span>, a scalar <span class="math notranslate nohighlight">\(y \in \mathbb{R}^1\)</span></p></li>
+</ul>
+<p>Then, suppose we have <span class="math notranslate nohighlight">\(N\)</span> data points, the objective function (to minimize) of <strong>Linear regression</strong> is</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\mathcal{L}(w) = \frac{1}{N}\sum_{i=1}^{N} \lVert w^Tx_i - y_i \rVert^2\]</div>
+</div>
+<p>We use <em>scikit-learn</em> [3] to perform linear regression.</p>
+<p>First, we create a linear regression object and fit the data.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">molecular_weight</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">log_solubility</span>
+
+<span class="n">regressor</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, we can predict the data using the <strong>predict</strong> function from the fitted model (<em>regressor</em>) and estimate the prediction error.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
+
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">regressor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean squared error: </span><span class="si">{</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">y_pred</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Coefficient of determination: </span><span class="si">{</span><span class="n">r2_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">y_pred</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Mean squared error: 1.52
+Coefficient of determination: 0.46
+</pre></div></div>
+</div>
+<p>Finally, we can plot the results.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">molecular_weight</span><span class="p">,</span><span class="n">log_solubility</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;All data points&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">X</span><span class="p">,</span>
+    <span class="n">regressor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">),</span>
+    <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Model predictions&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Molecular Weight (Da.)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;log solubility (mol/L)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;matplotlib.legend.Legend at 0x7efdf00be520&gt;
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/homeworks_hw0_Chem361_hw0_reference_28_1.png" src="../../_images/homeworks_hw0_Chem361_hw0_reference_28_1.png" />
+</div>
+</div>
+</section>
+<section id="7.-Linear-Regression-with-Model-Validation">
+<h2>7. Linear Regression with Model Validation<a class="headerlink" href="#7.-Linear-Regression-with-Model-Validation" title="Link to this heading">¶</a></h2>
+<p>A fundamental goal in machine learning is to build models that <strong>generalize well to unseen data</strong>. One of the most straightforward techniques to assess a model’s performance and avoid overfitting is the <strong>train-test split</strong>.</p>
+<ol class="arabic simple">
+<li><p>Basic Idea</p></li>
+</ol>
+<p>You divide your dataset into two subsets:</p>
+<ul class="simple">
+<li><p>A training set used to fit (or “train”) the model.</p></li>
+<li><p>A test set kept separate and used only for final evaluation.</p></li>
+</ul>
+<p>By evaluating the model on the test set—data that was never used during training—you can gauge how well the model generalizes to new, unseen data.</p>
+<ol class="arabic simple" start="2">
+<li><p>Why It Matters</p></li>
+</ol>
+<ul class="simple">
+<li><p>Training a model on the entire dataset can lead to overfitting, where the model memorizes the training data rather than learning general patterns.</p></li>
+<li><p>A test set serves as an unbiased check. If the model performs poorly on the test set, it indicates it may have overfitted the training data.</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>Typical Split Ratios</p></li>
+</ol>
+<ul class="simple">
+<li><p>Common splits include 70:30, 80:20, or 90:10 (train:test), depending on the dataset’s size and complexity.</p></li>
+<li><p>The key is to reserve a sufficient portion of the data for testing to get a reliable performance estimate.</p></li>
+</ul>
+<p>We can implement train-test split using <em>scikit-learn</em></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="n">test_size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">*</span><span class="mf">0.1</span><span class="p">)</span> <span class="c1"># do 90:10 train:test split</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="n">test_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Repeat the same steps as before, but now train the model on the training set and evaluate its performance on the test set.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">regressor</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">regressor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean squared error on training set: </span><span class="si">{</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span><span class="w"> </span><span class="n">y_pred</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Coefficient of determination on training set: </span><span class="si">{</span><span class="n">r2_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span><span class="w"> </span><span class="n">y_pred</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">regressor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean squared error on test set: </span><span class="si">{</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="w"> </span><span class="n">y_pred</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Coefficient of determination on test set: </span><span class="si">{</span><span class="n">r2_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="w"> </span><span class="n">y_pred</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># You’ll notice that the error on test set is larger, which is expected since you’re evaluating the model on unseen data.</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Mean squared error on training set: 1.51
+Coefficient of determination on training set: 0.48
+Mean squared error on test set: 1.63
+Coefficient of determination on test set: 0.32
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Train data points&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">X_train</span><span class="p">,</span>
+    <span class="n">regressor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">),</span>
+    <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Model predictions&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Molecular Weight (Da.)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;log solubility (mol/L)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Train set&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Test data points&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">X_test</span><span class="p">,</span>
+    <span class="n">regressor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">),</span>
+    <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Model predictions&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Molecular Weight (Da.)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;log solubility (mol/L)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Test set&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Text(0.5, 1.0, &#39;Test set&#39;)
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/homeworks_hw0_Chem361_hw0_reference_34_1.png" src="../../_images/homeworks_hw0_Chem361_hw0_reference_34_1.png" />
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, Xuhui Huang
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">CHEM361 - Homework0</a><ul>
+<li><a class="reference internal" href="#1.-Install-Dependencies">1. Install Dependencies</a></li>
+<li><a class="reference internal" href="#2.-Download-Dataset">2. Download Dataset</a></li>
+<li><a class="reference internal" href="#3.-Load-Dataset">3. Load Dataset</a></li>
+<li><a class="reference internal" href="#4.-Generate-Molecule">4. Generate Molecule</a></li>
+<li><a class="reference internal" href="#5.-Obtain-Chemical-Properties">5. Obtain Chemical Properties</a></li>
+<li><a class="reference internal" href="#6.-Linear-Regression">6. Linear Regression</a></li>
+<li><a class="reference internal" href="#7.-Linear-Regression-with-Model-Validation">7. Linear Regression with Model Validation</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=34cd777e"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>

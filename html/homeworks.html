@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="no-js" data-content_root="./" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="light dark" name="color-scheme"/><meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="genindex.html" rel="index" title="Index"/><link href="search.html" rel="search" title="Search"/><link href="how2cite.html" rel="next" title="How to Cite"/><link href="examples/transformer/Reference_Ch8_PLM_colab.html" rel="prev" title="Predict log EC50s of Dual-Agonists Peptide using Pretrained Protein Language Model"/>
+<link as="image" href="_static/logo.png" rel="prefetch"/>
+<!-- Generated with Sphinx 8.1.3 and Furo 2025.09.25 -->
+<title>Hands-on Homeworks - MLCHEM v0.1 documentation</title>
+<link href="_static/pygments.css?v=acfd86a5" rel="stylesheet" type="text/css">
+<link href="_static/styles/furo.css?v=580074bf" rel="stylesheet" type="text/css">
+<link href="_static/sphinx-codeautolink.css?v=b2176991" rel="stylesheet" type="text/css">
+<link href="_static/sg_gallery.css?v=d2d258e8" rel="stylesheet" type="text/css">
+<link href="_static/styles/furo-extensions.css?v=8dab3a3b" rel="stylesheet" type="text/css">
+<link href="_static/custom.css?v=e4905d15" rel="stylesheet" type="text/css"/>
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></link></link></link></link></link></meta></head>
+<body>
+<script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+<svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+<symbol id="svg-toc" viewbox="0 0 24 24">
+<title>Contents</title>
+<svg fill="currentColor" stroke="currentColor" stroke-width="0" viewbox="0 0 1024 1024">
+<path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"></path>
+</svg>
+</symbol>
+<symbol id="svg-menu" viewbox="0 0 24 24">
+<title>Menu</title>
+<svg class="feather-menu" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<line x1="3" x2="21" y1="12" y2="12"></line>
+<line x1="3" x2="21" y1="6" y2="6"></line>
+<line x1="3" x2="21" y1="18" y2="18"></line>
+</svg>
+</symbol>
+<symbol id="svg-arrow-right" viewbox="0 0 24 24">
+<title>Expand</title>
+<svg class="feather-chevron-right" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</symbol>
+<symbol id="svg-sun" viewbox="0 0 24 24">
+<title>Light mode</title>
+<svg class="feather-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</symbol>
+<symbol id="svg-moon" viewbox="0 0 24 24">
+<title>Dark mode</title>
+<svg class="icon-tabler-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+<path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+</svg>
+</symbol>
+<symbol id="svg-sun-with-moon" viewbox="0 0 24 24">
+<title>Auto light/dark, in light mode</title>
+<svg class="icon-custom-derived-from-feather-sun-and-tabler-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z" style="opacity: 50%"></path>
+<line x1="14.5" x2="14.5" y1="3.25" y2="1.25"></line>
+<line x1="14.5" x2="14.5" y1="15.85" y2="17.85"></line>
+<line x1="10.044" x2="8.63" y1="5.094" y2="3.68"></line>
+<line x1="19" x2="20.414" y1="14.05" y2="15.464"></line>
+<line x1="8.2" x2="6.2" y1="9.55" y2="9.55"></line>
+<line x1="20.8" x2="22.8" y1="9.55" y2="9.55"></line>
+<line x1="10.044" x2="8.63" y1="14.006" y2="15.42"></line>
+<line x1="19" x2="20.414" y1="5.05" y2="3.636"></line>
+<circle cx="14.5" cy="9.55" r="3.6"></circle>
+</svg>
+</symbol>
+<symbol id="svg-moon-with-sun" viewbox="0 0 24 24">
+<title>Auto light/dark, in dark mode</title>
+<svg class="icon-custom-derived-from-feather-sun-and-tabler-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"></path>
+<line style="opacity: 50%" x1="18" x2="18" y1="3.705" y2="2.5"></line>
+<line style="opacity: 50%" x1="18" x2="18" y1="11.295" y2="12.5"></line>
+<line style="opacity: 50%" x1="15.316" x2="14.464" y1="4.816" y2="3.964"></line>
+<line style="opacity: 50%" x1="20.711" x2="21.563" y1="10.212" y2="11.063"></line>
+<line style="opacity: 50%" x1="14.205" x2="13.001" y1="7.5" y2="7.5"></line>
+<line style="opacity: 50%" x1="21.795" x2="23" y1="7.5" y2="7.5"></line>
+<line style="opacity: 50%" x1="15.316" x2="14.464" y1="10.184" y2="11.036"></line>
+<line style="opacity: 50%" x1="20.711" x2="21.563" y1="4.789" y2="3.937"></line>
+<circle cx="18" cy="7.5" r="2.169" style="opacity: 50%"></circle>
+</svg>
+</symbol>
+<symbol id="svg-pencil" viewbox="0 0 24 24">
+<svg class="icon-tabler-pencil-code" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4"></path>
+<path d="M13.5 6.5l4 4"></path>
+<path d="M20 21l2 -2l-2 -2"></path>
+<path d="M17 17l-2 2l2 2"></path>
+</svg>
+</symbol>
+<symbol id="svg-eye" viewbox="0 0 24 24">
+<svg class="icon-tabler-eye-code" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+<path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+<path d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008"></path>
+<path d="M20 21l2 -2l-2 -2"></path>
+<path d="M17 17l-2 2l2 2"></path>
+</svg>
+</symbol>
+</svg>
+<input aria-label="Toggle site navigation sidebar" class="sidebar-toggle" id="__navigation" name="__navigation" type="checkbox"/>
+<input aria-label="Toggle table of contents sidebar" class="sidebar-toggle" id="__toc" name="__toc" type="checkbox"/>
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+<div class="page">
+<header class="mobile-header">
+<div class="header-left">
+<label class="nav-overlay-icon" for="__navigation">
+<span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+</label>
+</div>
+<div class="header-center">
+<a href="index.html"><div class="brand">MLCHEM v0.1 documentation</div></a>
+</div>
+<div class="header-right">
+<div class="theme-toggle-container theme-toggle-header">
+<button aria-label="Toggle Light / Dark / Auto color theme" class="theme-toggle">
+<svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+<svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+<svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+<svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+</button>
+</div>
+<label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+<span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+</label>
+</div>
+</header>
+<aside class="sidebar-drawer">
+<div class="sidebar-container">
+<div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+<div class="sidebar-logo-container">
+<img alt="Logo" class="sidebar-logo" src="_static/logo.png"/>
+</div>
+<span class="sidebar-brand-text">MLCHEM v0.1 documentation</span>
+</a><form action="search.html" class="sidebar-search-container" method="get" role="search">
+<input aria-label="Search" class="sidebar-search" name="q" placeholder="Search"/>
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="examples.html">Jupyter Notebook Tutorial Gallery</a><input aria-label="Toggle navigation of Jupyter Notebook Tutorial Gallery" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/representation/Reference_Ch2_fingerprints.html">Molecular Fingerprints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/representation/Reference_Ch2_molecular_properties.html">Molecular Descriptors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/cluster/Reference_Ch3_part_1_agglomerative_from_scratch.html">Agglomerative Clustering From Scratch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/cluster/Reference_Ch3_part_1_compare_kmeans_kcenter_on_simulated_data.html">Compare K-Means and K-Center on Simulated Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/cluster/Reference_Ch3_part_1_dbscan_from_scratch.html">DBSCAN From Scratch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/cluster/Reference_Ch3_part_1_kcenter_from_scratch.html">K-Center From Scratch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/cluster/Reference_Ch3_part_1_kmeans_from_scratch.html">KMeans From Scratch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/cluster/Reference_Ch3_part_1_sklearn_clustering_example.html">SKLearn Clustering Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/reduction/Reference_Ch3_part_1_pca_step_by_step.html">PCA from Scratch (Eigen Decomposition)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/linear_models/Reference_Ch4_Part_1_linear_regression.html">Linear Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/linear_models/Reference_Ch4_Part_1_logistic_regression.html">Logistic regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/linear_models/Reference_Ch4_Part_1_polynomial_fitting_overfitting_add_regularization.html">Avoid Overfitting using Regularization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/linear_models/Reference_Ch4_Part_1_polynomial_fitting_overfitting_and_cross_validation.html">Overfitting and Cross-Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/linear_models/Reference_Ch4_Part_1_regularization_effect_explained.html">Explain Effect of Regularization using One Feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/non_parametric/Reference_Ch4_part_2_decision_tree.html">Decision Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/non_parametric/Reference_Ch4_part_2_kNN.html">K-nearest Neighbour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/nn/Reference_Ch5_Part_1_multi_class_softmax_regression.html">Multi-class Classification Using Softmax Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/nn/Reference_Ch5_Part_3_MLP.html">Multilayer Perceptron (MLP) - An example to compare the linear model with the MLP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/nn/Reference_Ch5_Part_4_avoid_overfitting_techniques.html">Techniques to Prevent Overfitting in Neural Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/nn/Reference_ch5_Part_2_xor.html">A simple nonlinear dataset: XOR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/deep_nn/Reference_ch6_Part_1_CNNs_colab.html">Predict log EC50s of Dual-Agonist Peptides using Convolutional Neural Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/deep_nn/Reference_ch6_Part_2_GNN_colab.html">Predict Molecular Property using Graph Neural Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/deep_nn/Reference_ch6_Part_3_rnn_colab.html">Predict Molecular Property using Recurrent Neural Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/generative/Reference_Ch7_VAE_colab.html">Generate SMILES using VAE+RNN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/transformer/Reference_Ch8_PLM_colab.html">Predict log EC50s of Dual-Agonists Peptide using Pretrained Protein Language Model</a></li>
+</ul>
+</input></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Hands-on Homeworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how2cite.html">How to Cite</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<div class="main">
+<div class="content">
+<div class="article-container">
+<a class="back-to-top muted-link" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+</svg>
+<span>Back to top</span>
+</a>
+<div class="content-icon-container">
+<div class="theme-toggle-container theme-toggle-content">
+<button aria-label="Toggle Light / Dark / Auto color theme" class="theme-toggle">
+<svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+<svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+<svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+<svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+</button>
+</div>
+<label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+<span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+</label>
+</div>
+<article id="furo-main-content" role="main">
+<section id="hands-on-homeworks">
+<h1>Hands-on Homeworks<a class="headerlink" href="#hands-on-homeworks" title="Link to this heading">¶</a></h1>
+<p>We provide four hands-on problem sets plus one demo homework to
+help students apply the concepts learned from lectures to real chemistry problems.</p>
+<p>Each homework contains a problem set in the pdf format,
+and one or more refrence Jupyter notebooks highly related to the topics covered in this homework.
+Students are required to turn in their answers together with source code.
+They encouraged to solve the problems on their own in various ways,
+but can refer to the notebooks for hints or possible solutions.</p>
+<p>Homework 0 is a warm-up practice for students to get familiar with this homework form,
+which will not be graded:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>HW0: Get familiar with the Python environment and Jupyter notebook</dt><dd><ul>
+<li><p><a class="reference external" href="_static/homeworks/hw0/Chem361_hw0.pdf">HW0 Problem Set</a>, <a class="reference external" href="homeworks/hw0/Chem361_hw0_reference.html">HW0 Reference Notebook</a></p></li>
+<li><p>Expected submission: <a class="reference external" href="_static/homeworks/hw0/Chem361_hw0_answers.pdf">Sample answers</a>, <a class="reference external" href="homeworks/hw0/Chem361_hw0_solutions.html">Sample code</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>The four problem sets are as follows:</p>
+<ol class="arabic">
+<li><p>HW1: Extracting molecular descriptors</p>
+<ul class="simple">
+<li><p><a class="reference external" href="_static/homeworks/hw1/Chem361_hw1.pdf">HW1 Problem Set</a></p></li>
+<li><p><a class="reference external" href="homeworks/hw1/Chem361_hw1_reference.html">HW1 Reference Notebook</a></p></li>
+</ul>
+</li>
+<li><p>HW2: Clustering and dimensionality reduction</p>
+<ul class="simple">
+<li><p><a class="reference external" href="_static/homeworks/hw2/Chem361_hw2.pdf">HW2 Problem Set</a></p></li>
+<li><p><a class="reference external" href="homeworks/hw2/Chem361_hw2_reference.html">HW2 Reference Notebook</a></p></li>
+</ul>
+</li>
+<li><p>HW3: Supervised machine learning models</p>
+<ul>
+<li><p><a class="reference external" href="_static/homeworks/hw3/Chem361_hw3.pdf">HW3 Problem Set</a></p></li>
+<li><p>Reference notebooks from chapter 5 and chapter 6</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="examples/nn/Reference_Ch5_Part_3_MLP.html">Multi-layer Perceptron on Delaney Dataset</a></p></li>
+<li><p><a class="reference external" href="examples/deep_nn/Reference_ch6_Part_1_CNNs_colab.html">CNN on Peptide Dual-agonist Dataset</a></p></li>
+<li><p><a class="reference external" href="examples/deep_nn/Reference_ch6_Part_2_GNN_colab.html">RNN on Delaney Dataset</a></p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p>HW4: Generative models and Protein Language Models</p>
+<ul>
+<li><p><a class="reference external" href="_static/homeworks/hw4/Chem361_hw4.pdf">HW4 Problem Set</a></p></li>
+<li><p>Reference notebooks from chapter 7 and chapter 8</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="examples/generative/Reference_Ch7_VAE_colab.html">VAE on QM9</a></p></li>
+<li><p><a class="reference external" href="examples/transformer/Reference_Ch8_PLM_colab.html">ESM2 on Peptide Dual-agonist Dataset</a></p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</li>
+</ol>
+</section>
+</article>
+</div>
+<footer>
+<div class="related-pages">
+<a class="next-page" href="how2cite.html">
+<div class="page-info">
+<div class="context">
+<span>Next</span>
+</div>
+<div class="title">How to Cite</div>
+</div>
+<svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+</a>
+<a class="prev-page" href="examples/transformer/Reference_Ch8_PLM_colab.html">
+<svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+<div class="page-info">
+<div class="context">
+<span>Previous</span>
+</div>
+<div class="title">Predict log EC50s of Dual-Agonists Peptide using Pretrained Protein Language Model</div>
+</div>
+</a>
+</div>
+<div class="bottom-of-page">
+<div class="left-details">
+<div class="copyright">
+                Copyright © 2025, Xuhui Huang
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+</div>
+<div class="right-details">
+</div>
+</div>
+</footer>
+</div>
+<aside class="toc-drawer no-toc">
+</aside>
+</div>
+</div><script src="_static/documentation_options.js?v=34cd777e"></script>
+<script src="_static/doctools.js?v=9bcbadda"></script>
+<script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="_static/scripts/furo.js?v=46bd48cc"></script>
+<script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+</body>
+</html>
