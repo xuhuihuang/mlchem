@@ -87,7 +87,7 @@ Course Syllabus
 .. _KMeans: examples/cluster/Reference_Ch3_part_1_kmeans_from_scratch.html
 .. _KCenter: examples/cluster/Reference_Ch3_part_1_kcenter_from_scratch.html
 .. _DBSCAN: examples/cluster/Reference_Ch3_part_1_dbscan_from_scratch.html
-.. _AgglomerativeClustering: examples/cluster/Reference_Ch3_part_1_agglomerative_clustering_from_scratch.html
+.. _AgglomerativeClustering: examples/cluster/Reference_Ch3_part_1_agglomerative_from_scratch.html
 .. _PCA: examples/reduction/Reference_Ch3_part_1_pca_step_by_step.html
 .. _LinReg: examples/linear_models/Reference_Ch4_Part_1_linear_regression.html
 .. _OverfitCV: examples/linear_models/Reference_Ch4_Part_1_polynomial_fitting_overfitting_and_cross_validation.html
@@ -123,6 +123,7 @@ How to cite
 If you use materials in this repository, please cite:
 
 "Machine Learning in Chemistry: A Data Centred, Hands-on Introductory Machine Learning Course for Undergraduate Students", Mingyi Xue, Bojun Liu, and Xuhui Huang, ChemRxiv, DOI:
+
 
 
 
