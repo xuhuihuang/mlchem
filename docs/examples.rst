@@ -77,7 +77,7 @@ Chapter 6: Deep Neural Networks - Advanced Architectures for Chemical Applicatio
    examples/deep_nn/*
 
 
-Chapter 7: Generative Models - AI Generative Models
+Chapter 7: Generating Chemical Data – AI Generative Models
 ---------------------------------------------------
 
 .. nbgallery::
@@ -95,4 +95,5 @@ Chapter 8: Transforming Chemistry with Large Language Models - From Chemical to 
    :maxdepth: 1
 
    examples/transformer/*
+
 
