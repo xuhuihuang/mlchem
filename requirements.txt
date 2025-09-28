@@ -1,0 +1,12 @@
+wget
+scipy
+numpy
+pandas
+matplotlib
+seaborn
+rdkit
+scikit-learn 
+torch
+torchvision
+torchaudio
+transformers

@@ -1,0 +1,8 @@
+docs/build/
+docs/_static/homeworks/
+docs/_static/lectures/
+docs/examples/
+docs/homeworks/
+docs/chapters/
+examples/figures/
+*.pptx
