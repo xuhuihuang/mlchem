@@ -17,6 +17,7 @@ which will not be graded:
    - `HW0 Problem Set <_static/homeworks/hw0/Chem361_hw0.pdf>`_, `HW0 Reference Notebook <homeworks/hw0/Chem361_hw0_reference.html>`_
    - Expected submission: `Sample answers <_static/homeworks/hw0/Chem361_hw0_answers.pdf>`_, `Sample code <homeworks/hw0/Chem361_hw0_solutions.html>`_
 
+
 The four problem sets are as follows:
 
 #. HW1: Extracting molecular descriptors
