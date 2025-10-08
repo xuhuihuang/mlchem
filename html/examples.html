@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+
+<html class="no-js" data-content_root="./" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="light dark" name="color-scheme"/><meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="genindex.html" rel="index" title="Index"/><link href="search.html" rel="search" title="Search"/><link href="examples/representation/Reference_Ch2_fingerprints.html" rel="next" title="Molecular Fingerprints"/><link href="index.html" rel="prev" title="Jupyter Notebook Tutorials for Machine Learning in Chemistry (MLChem)"/>
+<link as="image" href="_static/logo.png" rel="prefetch"/>
+<!-- Generated with Sphinx 8.1.3 and Furo 2025.09.25 -->
+<title>Jupyter Notebook Tutorial Gallery - MLCHEM v0.1 documentation</title>
+<link href="_static/pygments.css?v=acfd86a5" rel="stylesheet" type="text/css">
+<link href="_static/styles/furo.css?v=580074bf" rel="stylesheet" type="text/css">
+<link href="_static/sphinx-codeautolink.css?v=b2176991" rel="stylesheet" type="text/css">
+<link href="_static/sg_gallery.css?v=d2d258e8" rel="stylesheet" type="text/css">
+<link href="_static/nbsphinx-gallery.css?v=26227f6e" rel="stylesheet" type="text/css">
+<link href="_static/styles/furo-extensions.css?v=8dab3a3b" rel="stylesheet" type="text/css"/>
+<link href="_static/custom.css?v=e4905d15" rel="stylesheet" type="text/css"/>
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></link></link></link></link></link></meta></head>
+<body>
+<script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+<svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+<symbol id="svg-toc" viewbox="0 0 24 24">
+<title>Contents</title>
+<svg fill="currentColor" stroke="currentColor" stroke-width="0" viewbox="0 0 1024 1024">
+<path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"></path>
+</svg>
+</symbol>
+<symbol id="svg-menu" viewbox="0 0 24 24">
+<title>Menu</title>
+<svg class="feather-menu" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<line x1="3" x2="21" y1="12" y2="12"></line>
+<line x1="3" x2="21" y1="6" y2="6"></line>
+<line x1="3" x2="21" y1="18" y2="18"></line>
+</svg>
+</symbol>
+<symbol id="svg-arrow-right" viewbox="0 0 24 24">
+<title>Expand</title>
+<svg class="feather-chevron-right" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</symbol>
+<symbol id="svg-sun" viewbox="0 0 24 24">
+<title>Light mode</title>
+<svg class="feather-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</symbol>
+<symbol id="svg-moon" viewbox="0 0 24 24">
+<title>Dark mode</title>
+<svg class="icon-tabler-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+<path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+</svg>
+</symbol>
+<symbol id="svg-sun-with-moon" viewbox="0 0 24 24">
+<title>Auto light/dark, in light mode</title>
+<svg class="icon-custom-derived-from-feather-sun-and-tabler-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z" style="opacity: 50%"></path>
+<line x1="14.5" x2="14.5" y1="3.25" y2="1.25"></line>
+<line x1="14.5" x2="14.5" y1="15.85" y2="17.85"></line>
+<line x1="10.044" x2="8.63" y1="5.094" y2="3.68"></line>
+<line x1="19" x2="20.414" y1="14.05" y2="15.464"></line>
+<line x1="8.2" x2="6.2" y1="9.55" y2="9.55"></line>
+<line x1="20.8" x2="22.8" y1="9.55" y2="9.55"></line>
+<line x1="10.044" x2="8.63" y1="14.006" y2="15.42"></line>
+<line x1="19" x2="20.414" y1="5.05" y2="3.636"></line>
+<circle cx="14.5" cy="9.55" r="3.6"></circle>
+</svg>
+</symbol>
+<symbol id="svg-moon-with-sun" viewbox="0 0 24 24">
+<title>Auto light/dark, in dark mode</title>
+<svg class="icon-custom-derived-from-feather-sun-and-tabler-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"></path>
+<line style="opacity: 50%" x1="18" x2="18" y1="3.705" y2="2.5"></line>
+<line style="opacity: 50%" x1="18" x2="18" y1="11.295" y2="12.5"></line>
+<line style="opacity: 50%" x1="15.316" x2="14.464" y1="4.816" y2="3.964"></line>
+<line style="opacity: 50%" x1="20.711" x2="21.563" y1="10.212" y2="11.063"></line>
+<line style="opacity: 50%" x1="14.205" x2="13.001" y1="7.5" y2="7.5"></line>
+<line style="opacity: 50%" x1="21.795" x2="23" y1="7.5" y2="7.5"></line>
+<line style="opacity: 50%" x1="15.316" x2="14.464" y1="10.184" y2="11.036"></line>
+<line style="opacity: 50%" x1="20.711" x2="21.563" y1="4.789" y2="3.937"></line>
+<circle cx="18" cy="7.5" r="2.169" style="opacity: 50%"></circle>
+</svg>
+</symbol>
+<symbol id="svg-pencil" viewbox="0 0 24 24">
+<svg class="icon-tabler-pencil-code" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4"></path>
+<path d="M13.5 6.5l4 4"></path>
+<path d="M20 21l2 -2l-2 -2"></path>
+<path d="M17 17l-2 2l2 2"></path>
+</svg>
+</symbol>
+<symbol id="svg-eye" viewbox="0 0 24 24">
+<svg class="icon-tabler-eye-code" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+<path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+<path d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008"></path>
+<path d="M20 21l2 -2l-2 -2"></path>
+<path d="M17 17l-2 2l2 2"></path>
+</svg>
+</symbol>
+</svg>
+<input aria-label="Toggle site navigation sidebar" class="sidebar-toggle" id="__navigation" name="__navigation" type="checkbox"/>
+<input aria-label="Toggle table of contents sidebar" class="sidebar-toggle" id="__toc" name="__toc" type="checkbox"/>
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+<div class="page">
+<header class="mobile-header">
+<div class="header-left">
+<label class="nav-overlay-icon" for="__navigation">
+<span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+</label>
+</div>
+<div class="header-center">
+<a href="index.html"><div class="brand">MLCHEM v0.1 documentation</div></a>
+</div>
+<div class="header-right">
+<div class="theme-toggle-container theme-toggle-header">
+<button aria-label="Toggle Light / Dark / Auto color theme" class="theme-toggle">
+<svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+<svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+<svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+<svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+</button>
+</div>
+<label class="toc-overlay-icon toc-header-icon" for="__toc">
+<span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+</label>
+</div>
+</header>
+<aside class="sidebar-drawer">
+<div class="sidebar-container">
+<div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+<div class="sidebar-logo-container">
+<img alt="Logo" class="sidebar-logo" src="_static/logo.png"/>
+</div>
+<span class="sidebar-brand-text">MLCHEM v0.1 documentation</span>
+</a><form action="search.html" class="sidebar-search-container" method="get" role="search">
+<input aria-label="Search" class="sidebar-search" name="q" placeholder="Search"/>
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Jupyter Notebook Tutorial Gallery</a><input aria-label="Toggle navigation of Jupyter Notebook Tutorial Gallery" checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/representation/Reference_Ch2_fingerprints.html">Molecular Fingerprints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/representation/Reference_Ch2_molecular_properties.html">Molecular Descriptors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/cluster/Reference_Ch3_part_1_agglomerative_from_scratch.html">Agglomerative Clustering From Scratch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/cluster/Reference_Ch3_part_1_compare_kmeans_kcenter_on_simulated_data.html">Compare K-Means and K-Center on Simulated Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/cluster/Reference_Ch3_part_1_dbscan_from_scratch.html">DBSCAN From Scratch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/cluster/Reference_Ch3_part_1_kcenter_from_scratch.html">K-Center From Scratch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/cluster/Reference_Ch3_part_1_kmeans_from_scratch.html">KMeans From Scratch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/cluster/Reference_Ch3_part_1_sklearn_clustering_example.html">SKLearn Clustering Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/reduction/Reference_Ch3_part_1_pca_step_by_step.html">PCA from Scratch (Eigen Decomposition)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/linear_models/Reference_Ch4_Part_1_linear_regression.html">Linear Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/linear_models/Reference_Ch4_Part_1_logistic_regression.html">Logistic regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/linear_models/Reference_Ch4_Part_1_polynomial_fitting_overfitting_add_regularization.html">Avoid Overfitting using Regularization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/linear_models/Reference_Ch4_Part_1_polynomial_fitting_overfitting_and_cross_validation.html">Overfitting and Cross-Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/linear_models/Reference_Ch4_Part_1_regularization_effect_explained.html">Explain Effect of Regularization using One Feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/non_parametric/Reference_Ch4_part_2_decision_tree.html">Decision Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/non_parametric/Reference_Ch4_part_2_kNN.html">K-nearest Neighbour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/nn/Reference_Ch5_Part_1_multi_class_softmax_regression.html">Multi-class Classification Using Softmax Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/nn/Reference_Ch5_Part_3_MLP.html">Multilayer Perceptron (MLP) - An example to compare the linear model with the MLP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/nn/Reference_Ch5_Part_4_avoid_overfitting_techniques.html">Techniques to Prevent Overfitting in Neural Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/nn/Reference_ch5_Part_2_xor.html">A simple nonlinear dataset: XOR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/deep_nn/Reference_ch6_Part_1_CNNs_colab.html">Predict log EC50s of Dual-Agonist Peptides using Convolutional Neural Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/deep_nn/Reference_ch6_Part_2_GNN_colab.html">Predict Molecular Property using Graph Neural Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/deep_nn/Reference_ch6_Part_3_rnn_colab.html">Predict Molecular Property using Recurrent Neural Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/generative/Reference_Ch7_VAE_colab.html">Generate SMILES using VAE+RNN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/transformer/Reference_Ch8_PLM_colab.html">Predict log EC50s of Dual-Agonists Peptide using Pretrained Protein Language Model</a></li>
+</ul>
+</input></li>
+<li class="toctree-l1"><a class="reference internal" href="homeworks.html">Hands-on Homeworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how2cite.html">How to Cite</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<div class="main">
+<div class="content">
+<div class="article-container">
+<a class="back-to-top muted-link" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+</svg>
+<span>Back to top</span>
+</a>
+<div class="content-icon-container">
+<div class="theme-toggle-container theme-toggle-content">
+<button aria-label="Toggle Light / Dark / Auto color theme" class="theme-toggle">
+<svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+<svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+<svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+<svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+</button>
+</div>
+<label class="toc-overlay-icon toc-content-icon" for="__toc">
+<span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+</label>
+</div>
+<article id="furo-main-content" role="main">
+<section id="jupyter-notebook-tutorial-gallery">
+<h1>Jupyter Notebook Tutorial Gallery<a class="headerlink" href="#jupyter-notebook-tutorial-gallery" title="Link to this heading">¶</a></h1>
+<section id="chapter-2-from-molecules-to-features-preparing-training-data">
+<h2>Chapter 2: From Molecules to Features - Preparing Training Data<a class="headerlink" href="#chapter-2-from-molecules-to-features-preparing-training-data" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<div class="nbsphinx-gallery">
+<a class="reference internal" href="examples/representation/Reference_Ch2_fingerprints.html">
+<div><img alt="" src="./_images/examples_representation_Reference_Ch2_fingerprints_10_0.png"/></div>
+<div>Molecular Fingerprints</div>
+</a>
+<a class="reference internal" href="examples/representation/Reference_Ch2_molecular_properties.html">
+<div><img alt="" src="./_images/examples_representation_Reference_Ch2_molecular_properties_17_0.svg"/></div>
+<div>Molecular Descriptors</div>
+</a>
+</div>
+</div>
+</section>
+<section id="chapter-3-uncovering-patterns-in-chemistry-unsupervised-learning-and-dimensionality-reduction">
+<h2>Chapter 3: Uncovering Patterns in Chemistry - Unsupervised Learning and Dimensionality Reduction<a class="headerlink" href="#chapter-3-uncovering-patterns-in-chemistry-unsupervised-learning-and-dimensionality-reduction" title="Link to this heading">¶</a></h2>
+<section id="clustering">
+<h3>Clustering<a class="headerlink" href="#clustering" title="Link to this heading">¶</a></h3>
+<div class="toctree-wrapper compound">
+<div class="nbsphinx-gallery">
+<a class="reference internal" href="examples/cluster/Reference_Ch3_part_1_agglomerative_from_scratch.html">
+<div><img alt="" src="./_images/examples_cluster_Reference_Ch3_part_1_agglomerative_from_scratch_16_1.png"/></div>
+<div>Agglomerative Clustering From Scratch</div>
+</a>
+<a class="reference internal" href="examples/cluster/Reference_Ch3_part_1_compare_kmeans_kcenter_on_simulated_data.html">
+<div><img alt="" src="./_images/examples_cluster_Reference_Ch3_part_1_compare_kmeans_kcenter_on_simulated_data_10_1.png"/></div>
+<div>Compare K-Means and K-Center on Simulated Data</div>
+</a>
+<a class="reference internal" href="examples/cluster/Reference_Ch3_part_1_dbscan_from_scratch.html">
+<div><img alt="" src="./_images/examples_cluster_Reference_Ch3_part_1_dbscan_from_scratch_16_0.png"/></div>
+<div>DBSCAN From Scratch</div>
+</a>
+<a class="reference internal" href="examples/cluster/Reference_Ch3_part_1_kcenter_from_scratch.html">
+<div><img alt="" src="./_images/examples_cluster_Reference_Ch3_part_1_kcenter_from_scratch_19_1.png"/></div>
+<div>K-Center From Scratch</div>
+</a>
+<a class="reference internal" href="examples/cluster/Reference_Ch3_part_1_kmeans_from_scratch.html">
+<div><img alt="" src="./_images/examples_cluster_Reference_Ch3_part_1_kmeans_from_scratch_19_1.png"/></div>
+<div>KMeans From Scratch</div>
+</a>
+<a class="reference internal" href="examples/cluster/Reference_Ch3_part_1_sklearn_clustering_example.html">
+<div><img alt="" src="./_images/examples_cluster_Reference_Ch3_part_1_sklearn_clustering_example_9_2.png"/></div>
+<div>SKLearn Clustering Examples</div>
+</a>
+</div>
+</div>
+</section>
+<section id="dimensionality-reduction">
+<h3>Dimensionality Reduction<a class="headerlink" href="#dimensionality-reduction" title="Link to this heading">¶</a></h3>
+<div class="toctree-wrapper compound">
+<div class="nbsphinx-gallery">
+<a class="reference internal" href="examples/reduction/Reference_Ch3_part_1_pca_step_by_step.html">
+<div><img alt="" src="./_images/examples_reduction_Reference_Ch3_part_1_pca_step_by_step_16_1.png"/></div>
+<div>PCA from Scratch (Eigen Decomposition)</div>
+</a>
+</div>
+</div>
+</section>
+</section>
+<section id="chapter-4-predicting-chemical-outcomes-supervised-learning-for-classification-and-regression">
+<h2>Chapter 4: Predicting Chemical Outcomes - Supervised Learning for Classification and Regression<a class="headerlink" href="#chapter-4-predicting-chemical-outcomes-supervised-learning-for-classification-and-regression" title="Link to this heading">¶</a></h2>
+<section id="linear-models">
+<h3>Linear Models<a class="headerlink" href="#linear-models" title="Link to this heading">¶</a></h3>
+<div class="toctree-wrapper compound">
+<div class="nbsphinx-gallery">
+<a class="reference internal" href="examples/linear_models/Reference_Ch4_Part_1_linear_regression.html">
+<div><img alt="" src="./_images/examples_linear_models_Reference_Ch4_Part_1_linear_regression_49_1.png"/></div>
+<div>Linear Regression</div>
+</a>
+<a class="reference internal" href="examples/linear_models/Reference_Ch4_Part_1_logistic_regression.html">
+<div><img alt="" src="./_images/examples_linear_models_Reference_Ch4_Part_1_logistic_regression_21_1.png"/></div>
+<div>Logistic regression</div>
+</a>
+<a class="reference internal" href="examples/linear_models/Reference_Ch4_Part_1_polynomial_fitting_overfitting_add_regularization.html">
+<div><img alt="" src="./_images/examples_linear_models_Reference_Ch4_Part_1_polynomial_fitting_overfitting_add_regularization_22_1.png"/></div>
+<div>Avoid Overfitting using Regularization</div>
+</a>
+<a class="reference internal" href="examples/linear_models/Reference_Ch4_Part_1_polynomial_fitting_overfitting_and_cross_validation.html">
+<div><img alt="" src="./_images/examples_linear_models_Reference_Ch4_Part_1_polynomial_fitting_overfitting_and_cross_validation_15_1.png"/></div>
+<div>Overfitting and Cross-Validation</div>
+</a>
+<a class="reference internal" href="examples/linear_models/Reference_Ch4_Part_1_regularization_effect_explained.html">
+<div><img alt="" src="./_images/examples_linear_models_Reference_Ch4_Part_1_regularization_effect_explained_23_0.png"/></div>
+<div>Explain Effect of Regularization using One Feature</div>
+</a>
+</div>
+</div>
+</section>
+<section id="non-parametric-models">
+<h3>Non-parametric Models<a class="headerlink" href="#non-parametric-models" title="Link to this heading">¶</a></h3>
+<div class="toctree-wrapper compound">
+<div class="nbsphinx-gallery">
+<a class="reference internal" href="examples/non_parametric/Reference_Ch4_part_2_decision_tree.html">
+<div><img alt="" src="./_images/examples_non_parametric_Reference_Ch4_part_2_decision_tree_27_9.png"/></div>
+<div>Decision Tree</div>
+</a>
+<a class="reference internal" href="examples/non_parametric/Reference_Ch4_part_2_kNN.html">
+<div><img alt="" src="./_images/examples_non_parametric_Reference_Ch4_part_2_kNN_15_1.png"/></div>
+<div>K-nearest Neighbour</div>
+</a>
+</div>
+</div>
+</section>
+</section>
+<section id="chapter-5-neural-networks-fundamentals-and-applications-in-chemical-modeling">
+<h2>Chapter 5: Neural Networks - Fundamentals and Applications in Chemical Modeling<a class="headerlink" href="#chapter-5-neural-networks-fundamentals-and-applications-in-chemical-modeling" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<div class="nbsphinx-gallery">
+<a class="reference internal" href="examples/nn/Reference_Ch5_Part_1_multi_class_softmax_regression.html">
+<div><img alt="" src="./_images/examples_nn_Reference_Ch5_Part_1_multi_class_softmax_regression_26_1.png"/></div>
+<div>Multi-class Classification Using Softmax Regression</div>
+</a>
+<a class="reference internal" href="examples/nn/Reference_Ch5_Part_3_MLP.html">
+<div><img alt="" src="./_images/examples_nn_Reference_Ch5_Part_3_MLP_28_0.png"/></div>
+<div>Multilayer Perceptron (MLP) - An example to compare the linear model with the MLP</div>
+</a>
+<a class="reference internal" href="examples/nn/Reference_Ch5_Part_4_avoid_overfitting_techniques.html">
+<div><img alt="" src="./_images/examples_nn_Reference_Ch5_Part_4_avoid_overfitting_techniques_26_1.png"/></div>
+<div>Techniques to Prevent Overfitting in Neural Networks</div>
+</a>
+<a class="reference internal" href="examples/nn/Reference_ch5_Part_2_xor.html">
+<div><img alt="" src="./_images/examples_nn_Reference_ch5_Part_2_xor_16_0.png"/></div>
+<div>A simple nonlinear dataset: XOR</div>
+</a>
+</div>
+</div>
+</section>
+<section id="chapter-6-deep-neural-networks-advanced-architectures-for-chemical-applications">
+<h2>Chapter 6: Deep Neural Networks - Advanced Architectures for Chemical Applications<a class="headerlink" href="#chapter-6-deep-neural-networks-advanced-architectures-for-chemical-applications" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<div class="nbsphinx-gallery">
+<a class="reference internal" href="examples/deep_nn/Reference_ch6_Part_1_CNNs_colab.html">
+<div><img alt="" src="./_images/examples_deep_nn_Reference_ch6_Part_1_CNNs_colab_35_0.png"/></div>
+<div>Predict log EC50s of Dual-Agonist Peptides using Convolutional Neural Network</div>
+</a>
+<a class="reference internal" href="examples/deep_nn/Reference_ch6_Part_2_GNN_colab.html">
+<div><img alt="" src="./_images/examples_deep_nn_Reference_ch6_Part_2_GNN_colab_46_0.png"/></div>
+<div>Predict Molecular Property using Graph Neural Network</div>
+</a>
+<a class="reference internal" href="examples/deep_nn/Reference_ch6_Part_3_rnn_colab.html">
+<div><img alt="" src="./_images/examples_deep_nn_Reference_ch6_Part_3_rnn_colab_41_0.png"/></div>
+<div>Predict Molecular Property using Recurrent Neural Networks</div>
+</a>
+</div>
+</div>
+</section>
+<section id="chapter-7-generating-chemical-data-ai-generative-models">
+<h2>Chapter 7: Generating Chemical Data – AI Generative Models<a class="headerlink" href="#chapter-7-generating-chemical-data-ai-generative-models" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<div class="nbsphinx-gallery">
+<a class="reference internal" href="examples/generative/Reference_Ch7_VAE_colab.html">
+<div><img alt="" src="./_images/examples_generative_Reference_Ch7_VAE_colab_81_0.png"/></div>
+<div>Generate SMILES using VAE+RNN</div>
+</a>
+</div>
+</div>
+</section>
+<section id="chapter-8-transforming-chemistry-with-large-language-models-from-chemical-to-protein-language-models">
+<h2>Chapter 8: Transforming Chemistry with Large Language Models - From Chemical to Protein Language Models<a class="headerlink" href="#chapter-8-transforming-chemistry-with-large-language-models-from-chemical-to-protein-language-models" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<div class="nbsphinx-gallery">
+<a class="reference internal" href="examples/transformer/Reference_Ch8_PLM_colab.html">
+<div><img alt="" src="./_images/examples_transformer_Reference_Ch8_PLM_colab_38_0.png"/></div>
+<div>Predict log EC50s of Dual-Agonists Peptide using Pretrained Protein Language Model</div>
+</a>
+</div>
+</div>
+</section>
+</section>
+</article>
+</div>
+<footer>
+<div class="related-pages">
+<a class="next-page" href="examples/representation/Reference_Ch2_fingerprints.html">
+<div class="page-info">
+<div class="context">
+<span>Next</span>
+</div>
+<div class="title">Molecular Fingerprints</div>
+</div>
+<svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+</a>
+<a class="prev-page" href="index.html">
+<svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+<div class="page-info">
+<div class="context">
+<span>Previous</span>
+</div>
+<div class="title">Home</div>
+</div>
+</a>
+</div>
+<div class="bottom-of-page">
+<div class="left-details">
+<div class="copyright">
+                Copyright © 2025, Xuhui Huang
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+</div>
+<div class="right-details">
+</div>
+</div>
+</footer>
+</div>
+<aside class="toc-drawer">
+<div class="toc-sticky toc-scroll">
+<div class="toc-title-container">
+<span class="toc-title">
+            On this page
+          </span>
+</div>
+<div class="toc-tree-container">
+<div class="toc-tree">
+<ul>
+<li><a class="reference internal" href="#">Jupyter Notebook Tutorial Gallery</a><ul>
+<li><a class="reference internal" href="#chapter-2-from-molecules-to-features-preparing-training-data">Chapter 2: From Molecules to Features - Preparing Training Data</a></li>
+<li><a class="reference internal" href="#chapter-3-uncovering-patterns-in-chemistry-unsupervised-learning-and-dimensionality-reduction">Chapter 3: Uncovering Patterns in Chemistry - Unsupervised Learning and Dimensionality Reduction</a><ul>
+<li><a class="reference internal" href="#clustering">Clustering</a></li>
+<li><a class="reference internal" href="#dimensionality-reduction">Dimensionality Reduction</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#chapter-4-predicting-chemical-outcomes-supervised-learning-for-classification-and-regression">Chapter 4: Predicting Chemical Outcomes - Supervised Learning for Classification and Regression</a><ul>
+<li><a class="reference internal" href="#linear-models">Linear Models</a></li>
+<li><a class="reference internal" href="#non-parametric-models">Non-parametric Models</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#chapter-5-neural-networks-fundamentals-and-applications-in-chemical-modeling">Chapter 5: Neural Networks - Fundamentals and Applications in Chemical Modeling</a></li>
+<li><a class="reference internal" href="#chapter-6-deep-neural-networks-advanced-architectures-for-chemical-applications">Chapter 6: Deep Neural Networks - Advanced Architectures for Chemical Applications</a></li>
+<li><a class="reference internal" href="#chapter-7-generating-chemical-data-ai-generative-models">Chapter 7: Generating Chemical Data – AI Generative Models</a></li>
+<li><a class="reference internal" href="#chapter-8-transforming-chemistry-with-large-language-models-from-chemical-to-protein-language-models">Chapter 8: Transforming Chemistry with Large Language Models - From Chemical to Protein Language Models</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</div><script src="_static/documentation_options.js?v=34cd777e"></script>
+<script src="_static/doctools.js?v=9bcbadda"></script>
+<script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="_static/scripts/furo.js?v=46bd48cc"></script>
+<script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+<script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+<script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>
